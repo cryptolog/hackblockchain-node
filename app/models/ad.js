@@ -2,9 +2,12 @@
 
 module.exports = function (sequelize, DataTypes) {
   var Ad = sequelize.define('Article', {
-    title: DataTypes.STRING,
-    url: DataTypes.STRING,
-    text: DataTypes.STRING
+    title: {type: DataTypes.STRING},
+    description: {type: DataTypes.STRING},
+    apply: {type: DataTypes.STRING},
+    location: {type: DataTypes.STRING},
+    expires: {type: DataTypes.DATE}
+    // createdAt/updatedAt
   }, {
     classMethods: {
       associate: function (models) {

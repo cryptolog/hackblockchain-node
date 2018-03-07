@@ -5,11 +5,12 @@ module.exports = function (sequelize, DataTypes) {
     paid: {type: DataTypes.BOOLEAN},
     email: {type: DataTypes.STRING},
     password: {type: DataTypes.STRING},
-    quota: {type: DataTypes.INTEGER},
+    quota: {type: DataTypes.INTEGER, default: 1},
     company: {type: DataTypes.BOOLEAN},
     companyName: {type: DataTypes.STRING},
     companyUrl: {type: DataTypes.STRING},
-    companyLogo: {type: DataTypes.STRING}
+    companyLogo: {type: DataTypes.STRING},
+    pro: {type: DataTypes.BOOLEAN, default: false}
   }, {
     classMethods: {
       associate: function (models) {

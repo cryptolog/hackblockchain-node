@@ -1,25 +1,25 @@
-var fs = require('fs'),
-  path = require('path'),
-  Sequelize = require('sequelize'),
-  config = require('../../config/config'),
-  db = {};
+var fs = require('fs')
+var path = require('path')
+var Sequelize = require('sequelize')
+var config = require('../../config/config')
+var db = {}
 
-var sequelize = new Sequelize(config.db);
+var sequelize = new Sequelize(config.db)
 
 fs.readdirSync(__dirname).filter(function (file) {
-  return (file.indexOf('.') !== 0) && (file !== 'index.js');
+  return (file.indexOf('.') !== 0) && (file !== 'index.js')
 }).forEach(function (file) {
-  var model = sequelize['import'](path.join(__dirname, file));
-  db[model.name] = model;
-});
+  var model = sequelize['import'](path.join(__dirname, file))
+  db[model.name] = model
+})
 
 Object.keys(db).forEach(function (modelName) {
   if ('associate' in db[modelName]) {
-    db[modelName].associate(db);
+    db[modelName].associate(db)
   }
-});
+})
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+db.sequelize = sequelize
+db.Sequelize = Sequelize
 
-module.exports = db;
+module.exports = db
