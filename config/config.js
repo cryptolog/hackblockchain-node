@@ -1,6 +1,6 @@
-var path = require('path'),
-    rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+var path = require('path')
+var rootPath = path.normalize(__dirname + '/..')
+var env = process.env.NODE_ENV || 'development'
 
 var config = {
   development: {
@@ -29,6 +29,6 @@ var config = {
     port: process.env.PORT || 3000,
     db: 'postgres://localhost/hbc-production'
   }
-};
+}
 
-module.exports = config[env];
+module.exports = config[env]
