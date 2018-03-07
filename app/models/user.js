@@ -1,16 +1,21 @@
 // Example model
 
 module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define('Article', {
-    paid: {type: DataTypes.BOOLEAN},
-    email: {type: DataTypes.STRING},
+  var User = sequelize.define('User', {
+    id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
+    paid: {type: DataTypes.BOOLEAN, defaultValue: true},
+    email: {type: DataTypes.STRING,
+      validate: {isEmail: true}
+    },
     password: {type: DataTypes.STRING},
-    quota: {type: DataTypes.INTEGER, default: 1},
-    company: {type: DataTypes.BOOLEAN},
-    companyName: {type: DataTypes.STRING},
-    companyUrl: {type: DataTypes.STRING},
-    companyLogo: {type: DataTypes.STRING},
-    pro: {type: DataTypes.BOOLEAN, default: false}
+    quota: {type: DataTypes.INTEGER, defaultValue: 1},
+    company: {type: DataTypes.BOOLEAN, allowNull: true},
+    companyName: {type: DataTypes.STRING, allowNull: true},
+    companyUrl: {type: DataTypes.STRING,
+      validate: {isUrl: true},
+      allowNull: true},
+    companyLogo: {type: DataTypes.STRING, allowNull: true},
+    pro: {type: DataTypes.BOOLEAN, default: false} // type of account
   }, {
     classMethods: {
       associate: function (models) {
