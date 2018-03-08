@@ -1,0 +1,238 @@
+/*! SITE CSS */
+
+/* TRANSITIONS */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Firefox < 16 */
+
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Opera < 12.1 */
+
+@-o-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('/assets/fonts/BebasNeue Regular.ttf');
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('/assets/fonts/BebasNeue Bold.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/Lato-Bold.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/Lato-Light.ttf');
+    font-weight: 300;
+}
+
+:root {
+    font-size: 16px;
+}
+
+h1 {
+    font-family: BebasNeue;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 3.1px;
+    color: #0f0f0f;
+    line-height: 36px;
+}
+
+h2 {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: 2px;
+    color: #0f0f0f;
+}
+
+h3 {
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 2.36;
+    letter-spacing: 0.8px;
+    line-height: 2.36;
+    color: #0f0f0f;
+}
+
+.input {
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 2px;
+    background-color: #f6f6f6;
+    border: solid 0.5px #cccccc;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    -webkit-animation: fadein 1s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 1s;
+    /* Internet Explorer */
+    -o-animation: fadein 1s;
+    /* Opera < 12.1 */
+    animation: fadein 1s;
+}
+
+.bg {
+    background: url("/assets/img/blockchain_bg.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.pop-up {
+    background-color: #fff;
+    max-width: 452px;
+    padding: 50px;
+}
+
+.button {
+    width: 300px;
+    height: 60px;
+    border-radius: 1.8px;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: 2px;
+}
+
+.reset-link {
+    font-family: Lato;
+    font-size: 18px;
+    text-decoration: underline;
+    text-underline-position: under;
+    font-weight: 300;
+    line-height: 1.22;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+.reset-section {
+    padding-bottom: 30px;
+}
+
+.dark-blue {
+    background-color: #001a77;
+}
+
+.icon-confirm {
+    width: 68px;
+    height: 68px;
+}
+
+.pop-up-action {
+    padding: 0px auto;
+}
+
+.is-condensed {
+    padding: 5px;
+}
+
+.has-no-border {
+    border: transparent;
+}
+
+.space {
+    padding-top: 20px;
+}
+
+.close {
+    font-family: lato;
+    font-weight: 500;
+    font-size: 24px;
+    position: absolute;
+    width: 35px;
+    height: 35x;
+    right: 20px;
+    top: 20px;
+}
+
+/*! BULMA MEDIA QUERIES CSS */
+
+@media (max-width: 1407px) {}
+
+@media (max-width: 1215px) {}
+
+@media (max-width: 1023px) {}
+
+@media (max-width: 768px) {
+    .pop-up {
+        background-color: #fff;
+        max-width: 452px;
+        padding: 60px 5%;
+    }
+    .button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
