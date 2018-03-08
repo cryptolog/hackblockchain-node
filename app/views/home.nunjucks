@@ -43,7 +43,7 @@
         </div>
         <div class="hero-foot">
             <div class="container has-text-centered">
-                <a href="/user/new.html" class="button is-outlined hero-button">POST A JOB</a>
+                <a href="/user/new.html" class="button is-outlined hero-button">POST A JOB FOR FREE</a>
                 <br>
                 <span class="down-arrow">&darr;</span>
             </div>
