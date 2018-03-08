@@ -59,23 +59,23 @@
 
 @font-face {
     font-family: 'BebasNeue';
-    src: url('/assets/fonts/BebasNeue Regular.ttf');
+    src: url('fonts/BebasNeue Regular.ttf');
 }
 
 @font-face {
     font-family: 'BebasNeue';
-    src: url('/assets/fonts/BebasNeue Bold.ttf');
+    src: url('fonts/BebasNeue Bold.ttf');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Lato';
-    src: url('/assets/fonts/Lato-Regular.ttf');
+    src: url('fonts/Lato-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Lato';
-    src: url('/assets/fonts/Lato-Light.ttf');
+    src: url('fonts/Lato-Light.ttf');
     font-weight: 300;
 }
 
@@ -105,7 +105,7 @@ body {
 }
 
 html {
-    background: url("/assets/img/blockchain_bg.jpg");
+    background: url("../img/blockchain_bg.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
 }
@@ -132,7 +132,7 @@ button {
 }
 
 .bg {
-    background: url("/assets/img/blockchain_bg.jpg");
+    background: url("../img/blockchain_bg.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
     color: #fff;
@@ -409,7 +409,7 @@ button {
 }
 
 .icon-search {
-    background-image: url("/assets/img/blockchain_search.svg");
+    background-image: url("../img/blockchain_search.svg");
 }
 
 .icon-search-hero {
@@ -417,28 +417,28 @@ button {
 }
 
 .icon-person {
-    background-image: url("/assets/img/blockchain_person.svg");
+    background-image: url("../img/blockchain_person.svg");
 }
 
 .icon-location {
-    background-image: url("/assets/img/blockchain_location.svg");
+    background-image: url("../img/blockchain_location.svg");
 }
 
 .icon-briefcase {
-    background-image: url("/assets/img/blockchain_briefcase.svg");
+    background-image: url("../img/blockchain_briefcase.svg");
     background-size: auto 80%;
 }
 
 .icon-time {
-    background-image: url("/assets/img/blockchain_location.svg");
+    background-image: url("../img/blockchain_location.svg");
 }
 
 .icon-hourglass {
-    background-image: url("/assets/img/blockchain_hourglass.svg");
+    background-image: url("../img/blockchain_hourglass.svg");
 }
 
 .icon-clock {
-    background-image: url("/assets/img/blockchain_clock.svg");
+    background-image: url("../img/blockchain_clock.svg");
 }
 
 .data-right {
