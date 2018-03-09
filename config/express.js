@@ -33,6 +33,8 @@ module.exports = function (app, config) {
   app.use(compress())
   app.use(express.static(config.root + '/public'))
   app.use(methodOverride())
+  app.use(passport.initialize())
+  app.use(passport.session())
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js')
   controllers.forEach(function (controller) {
