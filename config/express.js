@@ -8,6 +8,8 @@ var bodyParser = require('body-parser')
 var compress = require('compression')
 var methodOverride = require('method-override')
 var nunjucks = require('nunjucks')
+var session = require('express-session')
+var passport = require('passport')
 
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
@@ -22,6 +24,7 @@ module.exports = function (app, config) {
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'))
   app.use(logger('dev'))
+  app.use(session({secret: "/g*L.>HZ'smbPF3{X/.6@5c8vayGL76rx`pK,)[6aKH^x"}))
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({
     extended: true
