@@ -9,7 +9,7 @@ var compress = require('compression')
 var methodOverride = require('method-override')
 var nunjucks = require('nunjucks')
 var session = require('express-session')
-var passport = require('passport')
+var passport = require('./passport')
 
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
