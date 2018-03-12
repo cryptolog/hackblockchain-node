@@ -1,6 +1,6 @@
 {
   "name": "hbc",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "main": "app.js",
   "scripts": {
@@ -16,7 +16,6 @@
     "compression": "^1.5.2",
     "cookie-parser": "^1.3.3",
     "express": "^4.13.3",
-    "express-admin": "^1.3.2",
     "express-session": "^1.15.6",
     "glob": "^6.0.4",
     "helmet": "^3.12.0",
@@ -27,13 +26,13 @@
     "passport-local": "^1.0.0",
     "pg": "^6.0.1",
     "pg-hstore": "2.3.2",
-    "sequelize": "^3.5.1",
+    "sequelize": "^4.36.0",
     "serve-favicon": "^2.3.0",
     "standard": "^11.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "debug": "^2.2.0",
+    "debug": "^3.1.0",
     "gulp": "^3.9.0",
     "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",
