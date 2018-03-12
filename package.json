@@ -19,6 +19,7 @@
     "express-admin": "^1.3.2",
     "express-session": "^1.15.6",
     "glob": "^6.0.4",
+    "helmet": "^3.12.0",
     "method-override": "^2.3.0",
     "morgan": "^1.6.1",
     "nunjucks": "^3.0.0",

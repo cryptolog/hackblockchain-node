@@ -10,6 +10,7 @@ var methodOverride = require('method-override')
 var nunjucks = require('nunjucks')
 var session = require('express-session')
 var passport = require('./passport')
+var helmet = require('helmet')
 
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
@@ -35,6 +36,8 @@ module.exports = function (app, config) {
   app.use(methodOverride())
   app.use(passport.initialize())
   app.use(passport.session())
+  
+  app.use(helmet())
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js')
   controllers.forEach(function (controller) {
