@@ -6,28 +6,28 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'hbc'
+      name: 'hbc-mongo'
     },
     port: process.env.PORT || 3000,
-    db: 'postgres://localhost/hbc-development'
+    db: 'mongodb://localhost/hbc-mongo-development'
   },
 
   test: {
     root: rootPath,
     app: {
-      name: 'hbc'
+      name: 'hbc-mongo'
     },
     port: process.env.PORT || 3000,
-    db: 'postgres://localhost/hbc-test'
+    db: 'mongodb://localhost/hbc-mongo-test'
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'hbc'
+      name: 'hbc-mongo'
     },
     port: process.env.PORT || 3000,
-    db: 'postgres://localhost/hbc-production'
+    db: 'mongodb://localhost/hbc-mongo-production'
   }
 }
 
