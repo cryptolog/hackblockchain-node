@@ -35,7 +35,7 @@
                     <div class="search-section column is-10-tablet is-9-desktop is-7-widescreen">
                         <form id="homeSearchForm" action="/ad/" method="get">
                             <input id="search" name="search" type="text" class="input is-large full-search hero-search fsi-a icon-search icon-search-hero"
-                                placeholder="Search for Jobs: Developer, UI Designer, Etherium...">
+                                placeholder="Search for Jobs: Developer, UI Designer, Ethereum...">
                         </form>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="hero-foot">
             <div class="container has-text-centered">
-                <a href="/user/new.html" class="button is-outlined hero-button">POST A JOB FOR FREE</a>
+                <a href="/user/new.html" class="button is-outlined hero-button">Post a Job for only EUR 9.90</a>
                 <br>
                 <span class="down-arrow">&darr;</span>
             </div>
@@ -66,7 +66,7 @@
                         <img src="/assets/img/sample_logo.png" alt="Logo">
                     </div>
                     <div class="column is-3-tablet is-3-desktop has-text-left-tablet is-vertical-centered mobile-job-title">
-                        <h1>Senior Etherium Developer</h1>
+                        <h1>Senior Ethereum Developer</h1>
                     </div>
                     <div class="column is-8-tablet is-7-desktop is-vertical-centered">
                         <div class="columns is-variable is-1 post-icons is-multiline is-mobile ">

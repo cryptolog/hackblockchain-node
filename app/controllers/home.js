@@ -7,5 +7,6 @@ module.exports = function (app) {
 }
 
 router.get('/', function (req, res, next) {
+  // send latest jobs here
   res.render('home.nunjucks')
 })
