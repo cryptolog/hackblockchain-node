@@ -4,12 +4,11 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var AdSchema = new Schema({
-  title: String,
-  description: String,
-  jobType: String,
-  apply: String,
-  location: String,
-  expires: Date,
+  title: {type: String, required: true},
+  description: {type: String, required: true},
+  jobType: {type: String, required: true},
+  apply: {type: String, required: true},
+  location: {type: String, required: true},
   user_id: String
 })
 

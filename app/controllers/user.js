@@ -1,7 +1,5 @@
 var express = require('express')
 var router = express.Router()
-// var db = require('../models')
-var User = require('../models').User
 
 module.exports = function (app) {
   app.use('/user', router)
@@ -10,7 +8,7 @@ module.exports = function (app) {
 /* routes here */
 
 router.get('/', (req, res, next) => {
-  return res.render('index.nunjucks')
+  return res.render('index')
 })
 
 router.get('/signup', (req, res) => {

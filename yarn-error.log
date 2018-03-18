@@ -2,7 +2,7 @@ Arguments:
   /usr/bin/node /usr/bin/yarn start
 
 PATH: 
-  /home/nav/.gem/ruby/2.5.0/bin:/home/nav/.npm-global/bin:/home/nav/.gem/ruby/2.4.0/bin:/home/nav/.npm-global/bin:/home/nav/.gem/ruby/2.4.0/bin:/home/nav/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nav/.scripts/python/:/home/nav/go/bin/:/home/nav/.scripts/bash/:/home/nav/.yarn/bin/:/opt/Tusk/:/home/nav/.fzf/bin:/home/nav/go/bin/:/home/nav/.scripts/bash/:/home/nav/.scripts/python/:/home/nav/.scripts/python/:/home/nav/go/bin/:/home/nav/.scripts/bash/:/home/nav/.yarn/bin/:/opt/Tusk/
+  /home/nav/.gem/ruby/2.5.0/bin:/home/nav/.npm-global/bin:/home/nav/.gem/ruby/2.5.0/bin:/home/nav/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nav/.scripts/python/:/home/nav/go/bin/:/home/nav/.scripts/bash/:/home/nav/.yarn/bin/:/opt/Tusk/:/home/nav/.fzf/bin:/home/nav/.scripts/python/:/home/nav/go/bin/:/home/nav/.scripts/bash/:/home/nav/.yarn/bin/:/opt/Tusk/
 
 Yarn version: 
   1.5.1
@@ -38,7 +38,7 @@ npm manifest:
       "method-override": "^2.3.0",
       "mongoose": "^5.0.10",
       "morgan": "^1.6.1",
-      "nunjucks": "^3.0.0",
+      "nunjucks": "^3.1.2",
       "passport": "^0.4.0",
       "passport-local": "^1.0.0",
       "serve-favicon": "^2.3.0",
@@ -3530,7 +3530,7 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   
-  nunjucks@^3.0.0:
+  nunjucks@^3.1.2:
     version "3.1.2"
     resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.1.2.tgz#85945a66bb8239bb37ecef83dab4cc1f152aabb9"
     dependencies:

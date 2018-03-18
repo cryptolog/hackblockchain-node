@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
-// var db = require('../models')
+var mongoose = require('mongoose')
+var Ad = mongoose.model('Ad')
 
 module.exports = function (app) {
   app.use('/', router)
@@ -8,5 +9,6 @@ module.exports = function (app) {
 
 router.get('/', function (req, res, next) {
   // send latest jobs here
-  res.render('home.nunjucks')
+  // get the latest ads
+  res.render('home')
 })
