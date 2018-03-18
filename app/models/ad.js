@@ -10,12 +10,13 @@ var AdSchema = new Schema({
   apply: {type: String, required: true},
   location: {type: String, required: true},
   user_id: String
+}, {
+  timestamps: true
 })
 
 AdSchema.virtual('date').get(function () {
   return this._id.getTimestamp()
 })
 // TODO associations
-// TODO created/updated at
 
 mongoose.model('Ad', AdSchema)
