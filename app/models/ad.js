@@ -8,7 +8,12 @@ var AdSchema = new Schema({
   _id: {type: String, default: shortid.generate},
   title: {type: String, required: true},
   description: {type: String, required: true},
-  jobType: {type: String, required: true},
+  jobType: {
+    type: String,
+    enum: ['Contract', 'Full Time', 'Part Time', 'Internship'],
+    required: true
+  },
+  remote: {type: Boolean, required: true},
   apply: {type: String, required: true},
   location: {type: String, required: true},
   user_id: {type: Schema.Types.ObjectId, ref: 'User'}
@@ -19,6 +24,5 @@ var AdSchema = new Schema({
 AdSchema.virtual('date').get(function () {
   return this._id.getTimestamp()
 })
-// TODO associations
 
 mongoose.model('Ad', AdSchema)

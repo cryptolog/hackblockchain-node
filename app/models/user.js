@@ -5,7 +5,7 @@ var UserSchema = new Schema({
   email: {type: String, required: true},
   password: {type: String, required: true},
   paid: {type: Boolean, required: true},
-  quota: {type: Number, default: 5},
+  quota: {type: Number, default: 1, min: 1},
   companyName: String,
   companyUrl: String,
   companyLogo: String

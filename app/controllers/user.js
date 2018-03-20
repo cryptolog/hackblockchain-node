@@ -1,5 +1,7 @@
 var express = require('express')
 var router = express.Router()
+var mongoose = require('mongoose')
+var User = mongoose.model('User')
 
 module.exports = function (app) {
   app.use('/user', router)
@@ -18,6 +20,7 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', (req, res) => {
   // create the user
-  // inputted data will be validated against the definitions already in place
+  // req.params object
+  // { email, password, company etc}
   res.send('user created')
 })
