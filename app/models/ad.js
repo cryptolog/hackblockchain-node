@@ -10,7 +10,7 @@ var AdSchema = new Schema({
   description: {type: String, required: true},
   jobType: {
     type: String,
-    enum: ['Contract', 'Full Time', 'Part Time', 'Internship'],
+    enum: ['Contract', 'Full-Time', 'Part-Time', 'Internship'],
     required: true
   },
   remote: {type: Boolean, required: true},

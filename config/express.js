@@ -11,6 +11,7 @@ var nunjucks = require('nunjucks')
 var session = require('express-session')
 var passport = require('./passport')
 var helmet = require('helmet')
+var expiryDate = new Date(Date.now() + 60 * 60 * 1000)
 
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
@@ -25,7 +26,18 @@ module.exports = function (app, config) {
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'))
   app.use(logger('dev'))
-  app.use(session({secret: "/g*L.>HZ'smbPF3{X/.6@5c8vayGL76rx`pK,)[6aKH^x"}))
+  /*
+    * to be set
+  * secure: true
+  * domain
+  * path
+    */
+  app.use(session({
+    name: 'sessionId',
+    httpOnly: true,
+    secret: "/g*L.>HZ'smbPF3{X/.6@5c8vayGL76rx`pK,)[6aKH^x",
+    expires: expiryDate
+  }))
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({
     extended: true
@@ -36,7 +48,6 @@ module.exports = function (app, config) {
   app.use(methodOverride())
   app.use(passport.initialize())
   app.use(passport.session())
-  
   app.use(helmet())
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js')
