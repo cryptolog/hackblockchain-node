@@ -1,9 +1,11 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 let {isEmail, isAlpha, isURL} = require('validator')
+// TODO images strategy
 
 var UserSchema = new Schema({
-  email: {type: String,
+  email: {
+    type: String,
     required: true,
     validate: {
       validator: function (v) {
@@ -11,7 +13,7 @@ var UserSchema = new Schema({
       }
     }
   },
-  password: {type: String, required: true, min: 8},
+  password: {type: String, required: true},
   paid: {type: Boolean, required: true},
   quota: {type: Number, default: 1, min: 1},
   first: {

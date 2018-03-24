@@ -13,7 +13,7 @@ var AdSchema = new Schema({
     enum: ['Contract', 'Full-Time', 'Part-Time', 'Internship'],
     required: true
   },
-  remote: {type: Boolean, required: true},
+  remote: {type: Boolean, required: true, default: false},
   apply: {type: String, required: true},
   location: {type: String, required: true},
   user_id: {type: Schema.Types.ObjectId, ref: 'User'}
