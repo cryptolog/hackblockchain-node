@@ -16,7 +16,7 @@ var expiryDate = new Date(Date.now() + 60 * 60 * 1000)
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
   app.locals.ENV = env
-  app.locals.ENV_DEVELOPMENT = env == 'development'
+  app.locals.ENV_DEVELOPMENT = env === 'development'
   app.set('views', config.root + '/app/views')
   app.set('view engine', 'nunjucks')
   nunjucks.configure(config.root + '/app/views', {
