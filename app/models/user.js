@@ -14,7 +14,7 @@ var UserSchema = new Schema({
     }
   },
   password: {type: String, required: true},
-  paid: {type: Boolean, required: true},
+  pro: {type: Boolean, required: true, default: false},
   quota: {type: Number, default: 1, min: 1},
   first: {
     type: String,
