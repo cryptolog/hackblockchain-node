@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- ELEMENT 4 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link href="/assets/css/bulma.css" rel="stylesheet">
+    <link href="/assets/css/custom-access.css" rel="stylesheet">
+    <!-- END OF ELEMENT 4 -->
+    <title>Blockchain | Sign In</title>
+</head>
+
+<body>
+    <!-- ELEMENT 5 SHARED WITH SIGN-UP.HTML// FORM ID IS UNIQUE-->
+    <form id="signInForm" action="/user/" method="post">
+        <section class="bg hero is-fullheight">
+            <div class="hero-body">
+                <div class="container pop-up">
+                    <div class="columns is-multiline has-text-centered">
+                        <a href="/" class="close">
+                            <img src="/assets/img/close.svg" alt="">
+                        </a>
+
+                        <div class="column is-12 has-text-left">
+                            <h2 class="label">USERNAME OR E-MAIL</h2>
+                            <input id="emailInput" name="username" class="input is-medium-desktop" type="text" placeholder="hello@domain.com">
+                            <span id="emailInputHelp" class="help is-danger is-hidden">This email is invalid</span>
+                        </div>
+                        <div class="column is-12 has-text-left">
+                            <h2 class="label">PASSWORD</h2>
+                            <input id="passwordInput" name="password" class="input is-medium-desktop" type="password" placeholder="Password">
+                            <span id="passwordInputHelp" class="help is-danger is-hidden">Please enter your password</span>
+                        </div>
+                        <!-- ELEMENT 5b - UNIQUE FORGOT PASSWORD -->
+                        <div class="column is-12 has-text-left reset-section">
+                            <a id="emailPassword" class="reset-link" onclick="sendEmailPassword()">Forgot password?</a>
+                        </div>
+                        <!-- END OF ELEMENT 5b-->
+                        <!-- ELEMENT 5d - SIGN IN BUTTONS -->
+                        <div class="column is-12 is-condensed">
+                            <input type="submit" class="button is-info" value="SIGN IN" />
+                        </div>
+                        <div class="column is-12 is-condensed">
+                            <a href="/login/sign-up.html" class="button has-text-white dark-blue">NEW USER? SIGN UP</a>
+                        </div>
+                        <!-- END OF ELEMENT 5d -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+    <!-- END OF ELEMENT 5 -->
+
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/functions.js"></script>
+</body>
+
+</html>
