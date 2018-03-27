@@ -59,29 +59,29 @@
 
 @font-face {
     font-family: 'BebasNeue';
-    src: url('/assets/fonts/BebasNeue Regular.ttf');
+    src: url('/css/fonts/BebasNeue Regular.ttf');
 }
 
 @font-face {
     font-family: 'BebasNeue';
-    src: url('/assets/fonts/BebasNeue Bold.ttf');
+    src: url('/css/fonts/BebasNeue Bold.ttf');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Lato';
-    src: url('/assets/fonts/Lato-Regular.ttf');
+    src: url('/css/fonts/Lato-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Lato';
-    src: url('/assets/fonts/Lato-Bold.ttf');
+    src: url('/css/fonts/Lato-Bold.ttf');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Lato';
-    src: url('/assets/fonts/Lato-Light.ttf');
+    src: url('/css/fonts/Lato-Light.ttf');
     font-weight: 300;
 }
 
@@ -144,7 +144,7 @@ body {
 }
 
 .bg {
-    background: url("/assets/img/blockchain_bg.jpg");
+    background: url("/img/blockchain_bg.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
 }
