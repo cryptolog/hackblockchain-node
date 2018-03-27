@@ -59,4 +59,8 @@ UserSchema.virtual('date').get(function () {
   return this._id.getTimestamp()
 })
 
+UserSchema.virtual('validPassword').get(function (password) {
+  // check if the password hash is correct
+})
+
 mongoose.model('User', UserSchema)
