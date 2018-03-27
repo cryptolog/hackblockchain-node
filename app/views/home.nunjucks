@@ -18,7 +18,7 @@
                         <img src="img/blockchain_logo.png">
                     </div>
                     <div class="column is-tablet-2">
-                        <a href="/login/sign-in.html" class="button is-outlined hero-button">SIGN-IN</a>
+                        <a href="/login" class="button is-outlined hero-button">SIGN-IN</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     FIND BLOCKCHAIN JOBS
                 </h1>
                 <h2 class="subtitle">
-                    Find blockchain related jobs around the world.
+                    Find blockchain related jobs around the world
                 </h2>
                 <div class="columns is-centered field has-addons">
                     <div class="search-section column is-10-tablet is-9-desktop is-7-widescreen">
