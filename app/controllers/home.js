@@ -28,3 +28,7 @@ router.get('/signup', function (req, res, next) {
 router.post('/signup', function (req, res, next) {
   // create a new user and a new ad
 })
+
+router.get('/dashboard', function (req, res, next) {
+  // do something here
+})
