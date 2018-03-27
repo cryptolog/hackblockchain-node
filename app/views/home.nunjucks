@@ -63,7 +63,7 @@
             <div id="999-999" class="column is-11-tablet is-10-widescreen posting-section" style="cursor:pointer" onclick="goToJobLink(id)">
                 <div class="columns has-text-left">
                     <div class="column is-1-tablet has-text-centered is-vertical-centered mobile-job-logo">
-                        <img src="/assets/img/sample_logo.png" alt="Logo">
+                        <img src="/img/sample_logo.png" alt="Logo">
                     </div>
                     <div class="column is-3-tablet is-3-desktop has-text-left-tablet is-vertical-centered mobile-job-title">
                         <h1>Senior Ethereum Developer</h1>

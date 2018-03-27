@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html>
+{% extends 'layout.nunjucks' %}
 
-<head>
-    <!-- ELEMENT 4 -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <link href="/assets/css/bulma.css" rel="stylesheet">
-    <link href="/assets/css/custom-access.css" rel="stylesheet">
-    <!-- END OF ELEMENT 4 -->
-    <title>Blockchain | Sign In</title>
-</head>
+{% block head %}
+    <link href="css/custom-access.css" rel="stylesheet">
+    <title>HackBlockchain | Sign In</title>
+{% endblock %}
 
-<body>
-    <!-- ELEMENT 5 SHARED WITH SIGN-UP.HTML// FORM ID IS UNIQUE-->
+{% block body %}
     <form id="signInForm" action="/user/" method="post">
         <section class="bg hero is-fullheight">
             <div class="hero-body">
                 <div class="container pop-up">
                     <div class="columns is-multiline has-text-centered">
                         <a href="/" class="close">
-                            <img src="/assets/img/close.svg" alt="">
+                            <img src="/img/close.svg" alt="">
                         </a>
 
                         <div class="column is-12 has-text-left">
@@ -51,9 +44,4 @@
         </section>
     </form>
     <!-- END OF ELEMENT 5 -->
-
-    <script src="/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/assets/js/functions.js"></script>
-</body>
-
-</html>
+{% endblock %}
