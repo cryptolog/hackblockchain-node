@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
-var mongoose = require('mongoose')
-var Ad = mongoose.model('Ad')
+// var mongoose = require('mongoose')
+// var Ad = mongoose.model('Ad')
 
 module.exports = function (app) {
   app.use('/ad', router)
@@ -20,11 +20,7 @@ router.get('/ad/:id', function (req, res, next) {
 
 router.post('/ad', function (req, res, next) {
   // create the add
-  let adObject = req.params
-  let newAd = new Ad(adObject)
-  newAd.save(function (err, res) {
-    //do something
-    return res.send('some toast or something')
-  })
+  // let adObject = req.params
+  // let newAd = new Ad(adObject)
 
 })

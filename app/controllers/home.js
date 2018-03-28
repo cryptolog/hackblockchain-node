@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+var passport = require('../../config/passport')
 // var mongoose = require('mongoose')
 // var Ad = mongoose.model('Ad')
 
@@ -17,9 +18,11 @@ router.get('/login', function (req, res, next) {
   res.render('login')
 })
 
-router.post('/login', function (req, res, next) {
-  //  passport haiku here
-})
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/dashboard',
+  failureRedirect: '/login',
+  failureFlash: true
+}))
 
 router.get('/signup', function (req, res, next) {
   res.render('signup')

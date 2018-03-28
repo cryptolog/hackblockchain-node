@@ -1,4 +1,5 @@
 var mongoose = require('mongoose')
+var bcrypt = require('bcrypt')
 var Schema = mongoose.Schema
 let {isEmail, isAlpha, isURL} = require('validator')
 // TODO images strategy
@@ -61,6 +62,10 @@ UserSchema.virtual('date').get(function () {
 
 UserSchema.virtual('validPassword').get(function (password) {
   // check if the password hash is correct
+  bcrypt.compare(password, this.password, function (err, res) {
+    if (err) throw err
+    return res
+  })
 })
 
 mongoose.model('User', UserSchema)

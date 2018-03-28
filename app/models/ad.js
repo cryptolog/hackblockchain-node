@@ -1,5 +1,3 @@
-// main model for the ad
-
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 var shortid = require('shortid')
