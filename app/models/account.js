@@ -56,6 +56,10 @@ var AccountSchema = new Schema({
   timestamps: true
 })
 
-AccountSchema.plugin(passportLocalMongoose)
+AccountSchema.plugin(passportLocalMongoose, {
+  usernameField: 'email'
+})
 
 mongoose.model('Account', AccountSchema)
+
+module.exports = mongoose.model('Account')
