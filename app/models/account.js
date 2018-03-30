@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 let {isEmail, isAlpha, isURL} = require('validator')
+var passportLocalMongoose = require('passport-local-mongoose')
 // TODO images strategy
 
 var AccountSchema = new Schema({
@@ -54,5 +55,7 @@ var AccountSchema = new Schema({
 }, {
   timestamps: true
 })
+
+AccountSchema.plugin(passportLocalMongoose)
 
 mongoose.model('Account', AccountSchema)
