@@ -17,6 +17,7 @@ var AccountSchema = new Schema({
   password: {type: String, required: true},
   pro: {type: Boolean, required: true, default: false},
   quota: {type: Number, default: 1, min: 1},
+  active: {type: Boolean, default: false},
   first: {
     type: String,
     validate: {

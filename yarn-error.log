@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn add newrelic
+  /home/nav/.nvm/versions/node/v8.1.0/bin/node /usr/bin/yarn start
 
 PATH: 
-  /home/nav/.gem/ruby/2.5.0/bin:/home/nav/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nav/.scripts/python/:/home/nav/go/bin/:/home/nav/.scripts/bash/:/home/nav/.yarn/bin/:/opt/Tusk/:/home/nav/.fzf/bin
+  /home/nav/.nvm/versions/node/v8.1.0/bin:/home/nav/.gem/ruby/2.5.0/bin:/home/nav/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nav/.scripts/python/:/home/nav/go/bin/:/home/nav/.scripts/bash/:/home/nav/.yarn/bin/:/opt/Tusk/:/home/nav/.fzf/bin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  9.9.0
+  8.1.0
 
 Platform: 
   linux x64
@@ -39,9 +39,11 @@ npm manifest:
       "method-override": "^2.3.0",
       "mongoose": "^5.0.10",
       "morgan": "^1.6.1",
+      "newrelic": "^3.2.0",
       "nunjucks": "^3.1.2",
       "passport": "^0.4.0",
       "passport-local": "^1.0.0",
+      "passport-local-mongoose": "^5.0.0",
       "paymentwall": "^1.2.4",
       "serve-favicon": "^2.3.0",
       "shortid": "^2.2.8",
@@ -72,6 +74,16 @@ Lockfile:
   # yarn lockfile v1
   
   
+  "@newrelic/koa@^1.0.0":
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/@newrelic/koa/-/koa-1.0.2.tgz#79995e876bddcf90a273f87db63a0bb80bd3737c"
+  
+  "@newrelic/native-metrics@^2.1.0":
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/@newrelic/native-metrics/-/native-metrics-2.2.0.tgz#c2fe499ce7fef9e8b2a79e9da04069c7be2020b6"
+    dependencies:
+      nan "^2.8.0"
+  
   a-sync-waterfall@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/a-sync-waterfall/-/a-sync-waterfall-1.0.0.tgz#38e8319d79379e24628845b53b96722b29e0e47c"
@@ -100,6 +112,10 @@ Lockfile:
   acorn@^5.5.0:
     version "5.5.1"
     resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.1.tgz#84e05a9ea0acbe131227da50301e62464dc9c1d8"
+  
+  agent-base@~1.0.1:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-1.0.2.tgz#6890d3fb217004b62b70f8928e0fae5f8952a706"
   
   ajv-keywords@^2.1.0:
     version "2.1.1"
@@ -348,6 +364,12 @@ Lockfile:
     version "1.5.2"
     resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
   
+  async@^2.1.4:
+    version "2.6.0"
+    resolved "https://registry.yarnpkg.com/async/-/async-2.6.0.tgz#61a29abb6fcc026fea77e56d1c6ec53a795951f4"
+    dependencies:
+      lodash "^4.14.0"
+  
   asynckit@^0.4.0:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -591,6 +613,10 @@ Lockfile:
   bson@~1.0.4:
     version "1.0.6"
     resolved "https://registry.yarnpkg.com/bson/-/bson-1.0.6.tgz#444db59ddd4c24f0cb063aabdc5c8c7b0ceca912"
+  
+  buffer-from@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.0.0.tgz#4cb8832d23612589b0406e9e2956c17f06fdf531"
   
   builtin-modules@^1.0.0, builtin-modules@^1.1.1:
     version "1.1.1"
@@ -878,6 +904,15 @@ Lockfile:
     version "0.0.1"
     resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   
+  concat-stream@^1.5.0:
+    version "1.6.2"
+    resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.2.tgz#904bdf194cd3122fc675c77fc4ac3d4ff0fd1a34"
+    dependencies:
+      buffer-from "^1.0.0"
+      inherits "^2.0.3"
+      readable-stream "^2.2.2"
+      typedarray "^0.0.6"
+  
   concat-stream@^1.6.0:
     version "1.6.1"
     resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.1.tgz#261b8f518301f1d834e36342b9fea095d2620a26"
@@ -1022,15 +1057,15 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/debug-log/-/debug-log-1.0.1.tgz#2307632d4c04382b8df8a32f70b895046d52745f"
   
-  debug@2.6.8:
-    version "2.6.8"
-    resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
+  debug@2, debug@2.6.9, debug@^2.1.0, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
+    version "2.6.9"
+    resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
     dependencies:
       ms "2.0.0"
   
-  debug@2.6.9, debug@^2.1.0, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
-    version "2.6.9"
-    resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  debug@2.6.8:
+    version "2.6.8"
+    resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
     dependencies:
       ms "2.0.0"
   
@@ -1551,7 +1586,7 @@ Lockfile:
       assign-symbols "^1.0.0"
       is-extendable "^1.0.1"
   
-  extend@^3.0.0, extend@~3.0.0, extend@~3.0.1:
+  extend@3, extend@^3.0.0, extend@~3.0.0, extend@~3.0.1:
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
   
@@ -1876,6 +1911,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/gaze/-/gaze-0.5.2.tgz#40b709537d24d1d45767db5a908689dfe69ac44f"
     dependencies:
       globule "~0.1.0"
+  
+  generaterr@^1.5.0:
+    version "1.5.0"
+    resolved "https://registry.yarnpkg.com/generaterr/-/generaterr-1.5.0.tgz#b0ceb6cc5164df2a061338cc340a8615395c52fc"
   
   get-caller-file@^1.0.1:
     version "1.0.2"
@@ -2372,6 +2411,14 @@ Lockfile:
       jsprim "^1.2.2"
       sshpk "^1.7.0"
   
+  https-proxy-agent@^0.3.6:
+    version "0.3.6"
+    resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-0.3.6.tgz#713fa38e5d353f50eb14a342febe29033ed1619b"
+    dependencies:
+      agent-base "~1.0.1"
+      debug "2"
+      extend "3"
+  
   iconv-lite@0.4.13:
     version "0.4.13"
     resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
@@ -2835,7 +2882,7 @@ Lockfile:
     dependencies:
       jsonify "~0.0.0"
   
-  json-stringify-safe@~5.0.1:
+  json-stringify-safe@^5.0.0, json-stringify-safe@~5.0.1:
     version "5.0.1"
     resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   
@@ -3413,6 +3460,10 @@ Lockfile:
     version "2.9.2"
     resolved "https://registry.yarnpkg.com/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
   
+  nan@^2.8.0:
+    version "2.10.0"
+    resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
+  
   nanomatch@^1.2.9:
     version "1.2.9"
     resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.9.tgz#879f7150cb2dab7a471259066c104eee6e0fa7c2"
@@ -3441,6 +3492,20 @@ Lockfile:
   negotiator@0.6.1:
     version "0.6.1"
     resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+  
+  newrelic@^3.2.0:
+    version "3.2.0"
+    resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-3.2.0.tgz#78c4a616b2cf4584fdbfb33b807fab6dd2c0b0c0"
+    dependencies:
+      "@newrelic/koa" "^1.0.0"
+      async "^2.1.4"
+      concat-stream "^1.5.0"
+      https-proxy-agent "^0.3.6"
+      json-stringify-safe "^5.0.0"
+      readable-stream "^2.1.4"
+      semver "^5.3.0"
+    optionalDependencies:
+      "@newrelic/native-metrics" "^2.1.0"
   
   nocache@2.0.0:
     version "2.0.0"
@@ -3796,6 +3861,16 @@ Lockfile:
   pascalcase@^0.1.1:
     version "0.1.1"
     resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
+  
+  passport-local-mongoose@^5.0.0:
+    version "5.0.0"
+    resolved "https://registry.yarnpkg.com/passport-local-mongoose/-/passport-local-mongoose-5.0.0.tgz#7a482bd5a256b6112b616b339ee7d1f4e0bc51b3"
+    dependencies:
+      debug "^3.1.0"
+      generaterr "^1.5.0"
+      passport-local "^1.0.0"
+      scmp "^2.0.0"
+      semver "^5.5.0"
   
   passport-local@^1.0.0:
     version "1.0.0"
@@ -4385,6 +4460,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/safe-regex/-/safe-regex-1.1.0.tgz#40a3669f3b077d1e943d44629e157dd48023bf2e"
     dependencies:
       ret "~0.1.10"
+  
+  scmp@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/scmp/-/scmp-2.0.0.tgz#247110ef22ccf897b13a3f0abddb52782393cd6a"
   
   semver-diff@^2.0.0:
     version "2.1.0"
@@ -5338,14 +5417,17 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Found incompatible module
-      at new MessageError (/usr/lib/node_modules/yarn/lib/cli.js:186:110)
-      at Object.checkOne (/usr/lib/node_modules/yarn/lib/cli.js:62444:11)
-      at /usr/lib/node_modules/yarn/lib/cli.js:22773:75
-      at Generator.next (<anonymous>)
-      at step (/usr/lib/node_modules/yarn/lib/cli.js:98:30)
-      at /usr/lib/node_modules/yarn/lib/cli.js:116:14
-      at new Promise (<anonymous>)
-      at new F (/usr/lib/node_modules/yarn/lib/cli.js:23451:28)
-      at /usr/lib/node_modules/yarn/lib/cli.js:95:12
-      at /usr/lib/node_modules/yarn/lib/cli.js:22777:27
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c node app.js
+  Directory: /home/nav/dev/hbc
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at emitTwo (events.js:125:13)
+      at ChildProcess.emit (events.js:213:7)
+      at maybeClose (internal/child_process.js:887:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:208:5)
