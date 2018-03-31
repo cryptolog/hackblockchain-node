@@ -8,156 +8,158 @@
 
 
 {% block body %}
-    <!-- HERO SECTION BEGINS HERE -->
-    <section class="bg hero is-fullheight">
-        <div class="hero-head">
-            <div class="has-text-centered">
-                <div class="columns is-mobile">
-                    <div class="column is-mobile-2"></div>
-                    <div class="column is-mobile-8" style="margin: auto 20px;">
-                        <img src="/img/blockchain_logo.png">
-                    </div>
-                    <div class="column is-mobile-2 has-text-right">
-                        <a href="/login" class="button is-outlined hero-button is-hidden-mobile" style="margin-right:24px;">SIGN-IN</a>
-                        <a href="/login" class="is-hidden-tablet" style="margin-right:24px;">
-                            <img src="/img/login_white.png" alt="sign-in" style="height:30px; width:30px; opacity:0.8">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title">
-                    FIND BLOCKCHAIN JOBS
-                </h1>
-                <h2 class="subtitle">
-                    Find blockchain related jobs around the world
-                </h2>
-                <div class="columns is-centered field has-addons">
-                    <div class="search-section column is-10-tablet is-9-desktop is-7-widescreen">
-                        <form id="homeSearchForm" action="/ad/" method="get">
-                            <input id="search" name="search" type="text" class="input is-large full-search hero-search fsi-a icon-search icon-search-hero"
-                                placeholder="Search for Jobs: Developer, UI Designer, Ethereum...">
-                        </form>
+    <body class="transition-fade">
+        <!-- HERO SECTION BEGINS HERE -->
+        <section class="bg hero is-fullheight">
+            <div class="hero-head">
+                <div class="has-text-centered">
+                    <div class="columns is-mobile">
+                        <div class="column is-mobile-2"></div>
+                        <div class="column is-mobile-8" style="margin: auto 20px;">
+                            <img src="/img/blockchain_logo.png">
+                        </div>
+                        <div class="column is-mobile-2 has-text-right">
+                            <a href="/login" class="button is-outlined hero-button is-hidden-mobile" style="margin-right:24px;">SIGN-IN</a>
+                            <a href="/login" class="is-hidden-tablet" style="margin-right:24px;">
+                                <img src="/img/login_white.png" alt="sign-in" style="height:30px; width:30px; opacity:0.8">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-foot">
-            <div class="container has-text-centered">
-                <a href="/signup" class="button is-outlined hero-button">Post upto 3 Jobs for Free</a>
-                <br>
-                <span class="down-arrow">&darr;</span>
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        FIND BLOCKCHAIN JOBS
+                    </h1>
+                    <h2 class="subtitle">
+                        Find blockchain related jobs around the world
+                    </h2>
+                    <div class="columns is-centered field has-addons">
+                        <div class="search-section column is-10-tablet is-9-desktop is-7-widescreen">
+                            <form id="homeSearchForm" action="/ad/" method="get">
+                                <input id="search" name="search" type="text" class="input is-large full-search hero-search fsi-a icon-search icon-search-hero"
+                                    placeholder="Search for Jobs: Developer, UI Designer, Ethereum...">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="hero-foot">
+                <div class="container has-text-centered">
+                    <a href="/signup" class="button is-outlined hero-button">Post upto 3 Jobs for Free</a>
+                    <br>
+                    <span class="down-arrow">&darr;</span>
+                </div>
+            </div>
+        </section>
+        <!-- HERO SECTION ENDS HERE -->
+
+
+        <!-- ELEMENT-1 LATEST JOB SECTION STARTS HERE -->
+        <div class="container has-text-centered posting-label">
+            <h2>LATEST JOBS</h2>
         </div>
-    </section>
-    <!-- HERO SECTION ENDS HERE -->
+        <div class="container post-container">
 
+            <!-- ELEMENT-1a LOOP THIS SECTION TO DISPLAY JOBS -->
+            <div class="columns post is-centered">
+                <div id="999-999" class="column is-11-tablet is-10-widescreen posting-section" style="cursor:pointer" onclick="goToJobLink(id)">
+                    <div class="columns has-text-left">
+                        <div class="column is-1-tablet has-text-centered is-vertical-centered mobile-job-logo">
+                            <img src="/img/sample_logo.png" alt="Logo">
+                        </div>
+                        <div class="column is-3-tablet is-3-desktop has-text-left-tablet is-vertical-centered mobile-job-title">
+                            <h1>Senior Ethereum Developer</h1>
+                        </div>
+                        <div class="column is-8-tablet is-7-desktop is-vertical-centered">
+                            <div class="columns is-variable is-1 post-icons is-multiline is-mobile ">
+                                <div class="column is-3-tablet is-6-mobile">
 
-    <!-- ELEMENT-1 LATEST JOB SECTION STARTS HERE -->
-    <div class="container has-text-centered posting-label">
-        <h2>LATEST JOBS</h2>
-    </div>
-    <div class="container post-container">
-
-        <!-- ELEMENT-1a LOOP THIS SECTION TO DISPLAY JOBS -->
-        <div class="columns post is-centered">
-            <div id="999-999" class="column is-11-tablet is-10-widescreen posting-section" style="cursor:pointer" onclick="goToJobLink(id)">
-                <div class="columns has-text-left">
-                    <div class="column is-1-tablet has-text-centered is-vertical-centered mobile-job-logo">
-                        <img src="/img/sample_logo.png" alt="Logo">
-                    </div>
-                    <div class="column is-3-tablet is-3-desktop has-text-left-tablet is-vertical-centered mobile-job-title">
-                        <h1>Senior Ethereum Developer</h1>
-                    </div>
-                    <div class="column is-8-tablet is-7-desktop is-vertical-centered">
-                        <div class="columns is-variable is-1 post-icons is-multiline is-mobile ">
-                            <div class="column is-3-tablet is-6-mobile">
-
-                                <div class="icon-set">
-                                    <div class="icon-left icon-person"></div>
-                                    <div class="data-right">CoinBase</div>
+                                    <div class="icon-set">
+                                        <div class="icon-left icon-person"></div>
+                                        <div class="data-right">CoinBase</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="column is-3-tablet is-6-mobile">
-                                <div class="icon-set">
-                                    <div class="icon-left icon-location"></div>
-                                    <div class="data-right">New York</div>
+                                <div class="column is-3-tablet is-6-mobile">
+                                    <div class="icon-set">
+                                        <div class="icon-left icon-location"></div>
+                                        <div class="data-right">New York</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="column is-3-tablet is-6-mobile">
-                                <div class="icon-set">
-                                    <div class="icon-left icon-briefcase"></div>
-                                    <div class="data-right">Full-Time</div>
+                                <div class="column is-3-tablet is-6-mobile">
+                                    <div class="icon-set">
+                                        <div class="icon-left icon-briefcase"></div>
+                                        <div class="data-right">Full-Time</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="column is-3-tablet is-6-mobile">
-                                <div class="icon-set">
-                                    <div class="icon-left icon-clock"></div>
-                                    <div class="data-right">12 hours ago</div>
+                                <div class="column is-3-tablet is-6-mobile">
+                                    <div class="icon-set">
+                                        <div class="icon-left icon-clock"></div>
+                                        <div class="data-right">12 hours ago</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="column is-1 is-hidden-tablet-only is-1-desktop has-text-centered is-vertical-centered post-arrow">&rarr;</div>
+                        <div class="column is-1 has-text-centered is-vertical-centered post-apply-now">
+                            <a class="button is-info">APPLY NOW</a>
+                        </div>
                     </div>
-                    <div class="column is-1 is-hidden-tablet-only is-1-desktop has-text-centered is-vertical-centered post-arrow">&rarr;</div>
-                    <div class="column is-1 has-text-centered is-vertical-centered post-apply-now">
-                        <a class="button is-info">APPLY NOW</a>
+                </div>
+            </div>
+            <!-- ELEMENT 1a ENDs HERE -->
+
+            <!--ONE FORM TO SUBMIT ANY SELECTED JOB-->
+            <form class="is-hidden" id="goToJobForm" action="/ad/job_description.html" method="get">
+                <input id="job" name="job" type="text" value="" />
+            </form>
+            <!-- END OF FORM -->
+
+        </div>
+        <!-- ELEMENT-1 ENDS HERE -->
+
+        <!-- ELEMENT-3 -->
+        <!-- EMAIL SUBSCRIBER SECTION STARTS HERE -->
+        <div class="container has-text-centered email-label is-hidden-mobile" style="z-index:1">
+            <h2>GET THE LATEST JOBS IN YOUR INBOX</h2>
+        </div>
+        </div>
+        <div class="container email-container" style="z-index:1">
+            <div class="columns email is-centered ">
+                <div class="column is-8-tablet is-7-desktop email-section ">
+                    <div class="columns has-text-left ">
+                        <div class="column is-1 email-label-mobile">
+                            <h2 class="is-hidden-tablet">GET THE LATEST JOBS IN YOUR INBOX</h2>
+                        </div>
+                        <div id="emailSection" class="column is-8 has-text-left email-input-section">
+                            <p class="control has-icons-left has-icons-right">
+                                <input id="emailInput" class="input email-input" type="email" placeholder="YourName@email.com" />
+                                <p id="emailInputHelp" class="help is-danger is-hidden">This email is invalid</p>
+                            </p>
+                        </div>
+                        <div class="column is-2 has-text-centered email-button-section">
+                            <a id="emailSignUpButton" class="button is-info email-button">
+                                <span class="is-hidden-mobile">SIGN UP</span>
+                                <span class="is-hidden-tablet">SUBSCRIBE</span>
+                            </a>
+                        </div>
+                        <div class="column is-1 is-hidden-mobile"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ELEMENT 1a ENDs HERE -->
+        <!-- EMAIL SUBSCRIBER SECTION ENDS HERE -->
 
-        <!--ONE FORM TO SUBMIT ANY SELECTED JOB-->
-        <form class="is-hidden" id="goToJobForm" action="/ad/job_description.html" method="get">
-            <input id="job" name="job" type="text" value="" />
-        </form>
-        <!-- END OF FORM -->
-
-    </div>
-    <!-- ELEMENT-1 ENDS HERE -->
-
-    <!-- ELEMENT-3 -->
-    <!-- EMAIL SUBSCRIBER SECTION STARTS HERE -->
-    <div class="container has-text-centered email-label is-hidden-mobile" style="z-index:1">
-        <h2>GET THE LATEST JOBS IN YOUR INBOX</h2>
-    </div>
-    </div>
-    <div class="container email-container" style="z-index:1">
-        <div class="columns email is-centered ">
-            <div class="column is-8-tablet is-7-desktop email-section ">
-                <div class="columns has-text-left ">
-                    <div class="column is-1 email-label-mobile">
-                        <h2 class="is-hidden-tablet">GET THE LATEST JOBS IN YOUR INBOX</h2>
-                    </div>
-                    <div id="emailSection" class="column is-8 has-text-left email-input-section">
-                        <p class="control has-icons-left has-icons-right">
-                            <input id="emailInput" class="input email-input" type="email" placeholder="YourName@email.com" />
-                            <p id="emailInputHelp" class="help is-danger is-hidden">This email is invalid</p>
-                        </p>
-                    </div>
-                    <div class="column is-2 has-text-centered email-button-section">
-                        <a id="emailSignUpButton" class="button is-info email-button">
-                            <span class="is-hidden-mobile">SIGN UP</span>
-                            <span class="is-hidden-tablet">SUBSCRIBE</span>
-                        </a>
-                    </div>
-                    <div class="column is-1 is-hidden-mobile"></div>
+        <!-- FOOTER SECTION STARTS HERE -->
+        <section class="bg hero footer ">
+            <div class="hero-head ">
+                <div class="container has-text-centered ">
+                    <img src="img/blockchain_logo.png">
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- EMAIL SUBSCRIBER SECTION ENDS HERE -->
-
-    <!-- FOOTER SECTION STARTS HERE -->
-    <section class="bg hero footer ">
-        <div class="hero-head ">
-            <div class="container has-text-centered ">
-                <img src="img/blockchain_logo.png">
-            </div>
-        </div>
-    </section>
-    <!-- FOOTER JOB SECTION ENDS HERE -->
-    <!-- ELEMENT-3 ENDS HERE -->
+        </section>
+        <!-- FOOTER JOB SECTION ENDS HERE -->
+        <!-- ELEMENT-3 ENDS HERE -->
+    </body>
 {% endblock %}

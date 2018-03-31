@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends './layout.nunjucks' %}
 
-<head>
-    <!-- ELEMENT 4 -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <link href="/assets/css/bulma.css" rel="stylesheet">
-    <link href="/assets/css/custom-access.css" rel="stylesheet">
-    <!-- END OF ELEMENT 4 -->
+{% block head %}
 
+    <link href="/css/custom-access.css" rel="stylesheet">
     <title>Blockchain | Sign Up</title>
-</head>
+{% endblock %}
 
 <body>
     <!-- ELEMENT 5 SHARED WITH SIGN-IN.HTML// FORM ID IS UNIQUE-->
@@ -57,6 +51,3 @@
 
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/js/functions.js"></script>
-</body>
-
-</html>
