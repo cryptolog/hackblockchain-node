@@ -7,13 +7,13 @@
 
 {% block body %}
     <body>
-        <form id="signUpForm" action="/user/" method="post">
+        <form id="signUpForm" action="/signup" method="post">
             <section class="bg hero is-fullheight">
                 <div class="hero-body">
                     <div class="container pop-up">
                         <div class="columns is-multiline has-text-centered">
                             <a href="/" class="close">
-                                <img src="/assets/img/close.svg" alt="">
+                                <img src="/img/close.svg" alt="">
                             </a>
                             <div class="column is-12 has-text-left">
                                 <h2 class="label">Email</h2>
@@ -34,7 +34,7 @@
                                 <input type="submit" class="button is-info" value="SIGN UP" />
                             </div>
                             <div class="column is-12 is-condensed">
-                                <a href="/login/sign-in.html" class="button has-text-white dark-blue">OLD USER? SIGN IN</a>
+                                <a href="/login/sign-in.html" class="button has-text-white dark-blue">Existing User? Sign In</a>
                             </div>
                         </div>
                     </div>
