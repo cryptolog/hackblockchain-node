@@ -46,7 +46,7 @@
         </div>
         <div class="hero-foot">
             <div class="container has-text-centered">
-                <a href="/user/new.html" class="button is-outlined hero-button">Post a Job for only EUR 9.90</a>
+                <a href="/signup" class="button is-outlined hero-button">Post upto 3 Jobs for Free</a>
                 <br>
                 <span class="down-arrow">&darr;</span>
             </div>
