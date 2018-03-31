@@ -27,7 +27,7 @@ var config = {
       name: 'hbc-mongo'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/hbc-mongo-production'
+    db: process.env.MONGO_URL
   }
 }
 
