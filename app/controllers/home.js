@@ -30,7 +30,6 @@ router.get('/signup', function (req, res, next) {
 
 router.post('/signup', function (req, res, next) {
   // validate the password here
-  let {email, password} = req.body
   res.redirect('/signup', {failureFlash: true})
   // create an account and redirect to success page
   // didn't get an email, resend it?

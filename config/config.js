@@ -27,7 +27,7 @@ var config = {
       name: 'hbc-mongo'
     },
     port: process.env.PORT || 3000,
-    db: process.env.MONGO_URL
+    db: process.env.MONGODB_URI + '/phase-0'
   }
 }
 

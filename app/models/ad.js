@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 var shortid = require('shortid')
+let {isAlpha} = require('validator')
 
 var AdSchema = new Schema({
   _id: {type: String, default: shortid.generate},
@@ -14,6 +15,16 @@ var AdSchema = new Schema({
   remote: {type: Boolean, required: true, default: false},
   apply: {type: String, required: true},
   location: {type: String, required: true},
+  companyName: {
+    type: String,
+    required: true,
+    validate: {
+      validator: function (v) {
+        return isAlpha(v)
+      }
+    }
+  },
+  companyLogo: String,
   user_id: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
   timestamps: true
