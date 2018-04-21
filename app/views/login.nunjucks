@@ -27,7 +27,7 @@
                             </div>
                             <!-- ELEMENT 5b - UNIQUE FORGOT PASSWORD -->
                             <div class="column is-12 has-text-left reset-section">
-                                <a id="emailPassword" class="reset-link" onclick="sendEmailPassword()">Forgot password?</a>
+                                <a id="emailPassword" class="reset-link" href="/forgot">Forgot password?</a>
                             </div>
                             <!-- END OF ELEMENT 5b-->
                             <!-- ELEMENT 5d - SIGN IN BUTTONS -->
