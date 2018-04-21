@@ -35,7 +35,7 @@
                                 <input type="submit" class="button is-info" value="Sign In" />
                             </div>
                             <div class="column is-12 is-condensed">
-                                <a href="/login/sign-up.html" class="button has-text-white dark-blue">New User? Sign Up</a>
+                                <a href="/signup" class="button has-text-white dark-blue">New User? Sign Up</a>
                             </div>
                             <!-- END OF ELEMENT 5d -->
                         </div>
