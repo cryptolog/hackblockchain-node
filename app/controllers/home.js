@@ -30,7 +30,7 @@ router.get('/forgot', function (req, res, next) {
 
 router.post('/forgot', function (req, res, next) {
   // check if the email exists in the db and send a reset email
-  res.send('Email sent')
+  res.render('password_reset_success')
 })
 
 router.get('/signup', function (req, res, next) {
