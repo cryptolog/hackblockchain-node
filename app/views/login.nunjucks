@@ -18,7 +18,7 @@
                             <div class="column is-12 has-text-left">
                                 <h2 class="label">Email</h2>
                                 <input id="emailInput" name="username" class="input is-medium-desktop" type="text" placeholder="hello@domain.com">
-                                <span id="emailInputHelp" class="help is-danger is-hidden">This email is invalid</span>
+                                <span id="emailInputHelp" class="help is-danger is-hidden">Invalid Email Address</span>
                             </div>
                             <div class="column is-12 has-text-left">
                                 <h2 class="label">Password</h2>
@@ -32,7 +32,7 @@
                             <!-- END OF ELEMENT 5b-->
                             <!-- ELEMENT 5d - SIGN IN BUTTONS -->
                             <div class="column is-12 is-condensed">
-                                <input type="submit" class="button is-info" value="SIGN IN" />
+                                <input type="submit" class="button is-info" value="Sign In" />
                             </div>
                             <div class="column is-12 is-condensed">
                                 <a href="/login/sign-up.html" class="button has-text-white dark-blue">New User? Sign Up</a>

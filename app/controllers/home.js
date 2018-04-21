@@ -24,6 +24,15 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true
 }))
 
+router.get('/forgot', function (req, res, next) {
+  res.render('password_reset')
+})
+
+router.post('/forgot', function (req, res, next) {
+  // check if the email exists in the db and send a reset email
+  res.send('Email sent')
+})
+
 router.get('/signup', function (req, res, next) {
   res.render('signup')
 })
