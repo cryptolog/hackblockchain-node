@@ -24,7 +24,6 @@ var AdSchema = new Schema({
       }
     }
   },
-  companyLogo: String,
   user_id: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
   timestamps: true

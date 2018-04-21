@@ -2,7 +2,6 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 let {isEmail, isAlpha} = require('validator')
 var passportLocalMongoose = require('passport-local-mongoose')
-// TODO images strategy
 
 var AccountSchema = new Schema({
   email: {
