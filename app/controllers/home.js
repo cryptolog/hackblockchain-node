@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var passport = require('../../config/passport')
+var passport = require('passport')
 // var mongoose = require('mongoose')
 // var Ad = mongoose.model('Ad')
 
