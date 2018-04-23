@@ -41,5 +41,3 @@ AccountSchema.plugin(passportLocalMongoose, {
 })
 
 mongoose.model('Account', AccountSchema)
-
-module.exports = mongoose.model('Account')
