@@ -9,7 +9,7 @@ var compress = require('compression')
 var methodOverride = require('method-override')
 var nunjucks = require('nunjucks')
 var session = require('express-session')
-var passport = require('./passport')
+var passport = require('passport')
 var helmet = require('helmet')
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000)
 
