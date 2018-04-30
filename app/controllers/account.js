@@ -31,32 +31,44 @@ router.post('/forgot', function (req, res, next) {
       let pwHash = result.password
       let createdAt = result.createdAt
       let userId = result.id
-      let resetToken = jwt.encode(userId, pwHash + '-' + createdAt)
-      let resetUrl = `https://www.hackblockcha.in/accounts/reset/{resetToken}`
-      mailgun.send('template', this)
+      let payload = {userId, emailId}
+      let resetToken = jwt.encode(payload, pwHash + '-' + createdAt)
+      let resetUrl = `https://www.hackblockcha.in/accounts/reset/${resetToken}/${userId}`
+      mailgun.send('template', resetUrl)
       // create a link and send the email
     }
     res.render('password_reset_email_sent')
   })
 })
 
-router.get('/reset/:id', function (req, res, next) {
-  // this is it
-
+router.get('/reset/:token/:userid', function (req, res, next) {
+  let {token, userid} = req.params
+  Account.findById(userid, function (err, result) {
+    if (err) throw err
+    let decoded = null
+    try {
+      decoded = jwt.decode(token, result.password + '-' + result.createdAt)
+    } catch (err) {
+      decoded = null
+    }
+    if (result.email === decoded.emailId) {
+      // token is valid
+      res.render('password_reset_form', {userid})
+    } else {
+      // token invalid
+      res.render('password_invalid_token')
+    }
+  })
 })
 
 router.post('/reset', function (req, res, next) {
   // do something
+  let {userid, newpassword} = req.body
+  // TODO on this
+  Account.findByIdAndUpdate(userid, {password: newpassword})
+
 })
 
-router.post('/passwordreset', function (req, res) {
-  const { email } = req.body
-  Account.findById(email, function (err, user) {
-    if (err) throw err
-    // if found then send an email
-    // otherwise ?
-  })
-})
 
 router.get('/signup', function (req, res, next) {
   res.render('signup')
