@@ -1,7 +1,9 @@
-var express = require('express')
-var router = express.Router()
-var passport = require('passport')
-// var mongoose = require('mongoose')
+let express = require('express')
+let router = express.Router()
+let passport = require('passport')
+let mongoose = require('mongoose')
+let Account = mongoose.model('Account')
+let jwt = require('jwt-simple')
 // var Ad = mongoose.model('Ad')
 
 module.exports = function (app) {
@@ -29,8 +31,33 @@ router.get('/forgot', function (req, res, next) {
 })
 
 router.post('/forgot', function (req, res, next) {
-  // check if the email exists in the db and send a reset email
-  res.render('password_reset_success')
+  const {emailId} = req.body
+  Account.findById(emailId, function (err, result) {
+    if (err) throw err
+    if (result) {
+      // create a link and send the email
+      // create a jwt using stuff and send it
+    }
+    res.render('password_reset_email_sent')
+  })
+})
+
+router.get('/reset/:id', function (req, res, next) {
+  // this is it
+
+})
+
+router.post('/reset', function (req, res, next) {
+  // do something
+})
+
+router.post('/passwordreset', function (req, res) {
+  const { email } = req.body
+  Account.findById(email, function (err, user) {
+    if (err) throw err
+    // if found then send an email
+    // otherwise ?
+  })
 })
 
 router.get('/signup', function (req, res, next) {
