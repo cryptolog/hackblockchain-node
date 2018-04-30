@@ -25,11 +25,16 @@ router.get('/forgot', function (req, res, next) {
 
 router.post('/forgot', function (req, res, next) {
   const {emailId} = req.body
-  Account.findById(emailId, function (err, result) {
+  Account.findOne(emailId, function (err, result) {
     if (err) throw err
     if (result) {
+      let pwHash = result.password
+      let createdAt = result.createdAt
+      let userId = result.id
+      let resetToken = jwt.encode(userId, pwHash + '-' + createdAt)
+      let resetUrl = `https://www.hackblockcha.in/accounts/reset/{resetToken}`
+      mailgun.send('template', this)
       // create a link and send the email
-      // create a jwt using stuff and send it
     }
     res.render('password_reset_email_sent')
   })
