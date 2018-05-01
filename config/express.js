@@ -12,6 +12,7 @@ var session = require('express-session')
 var passport = require('passport')
 var helmet = require('helmet')
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000)
+var RedisStore = require('connect-redis')(session)
 
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
@@ -26,18 +27,19 @@ module.exports = function (app, config) {
 
   app.use(favicon(config.root + '/public/img/favicon.ico'))
   app.use(logger('dev'))
-  /*
-    * to be set
-  * secure: true
-  * domain
-  * path
-    */
-  app.use(session({
-    name: 'sessionId',
+
+  var sessionConfig = {
     httpOnly: true,
-    secret: "/g*L.>HZ'smbPF3{X/.6@5c8vayGL76rx`pK,)[6aKH^x",
+    secret: "/g*L.>HZ'smbPF3{X/:6@5c8v'yGL76rx`pK,)[6aKH^x",
     expires: expiryDate
-  }))
+  }
+
+  if (app.get('env') === 'production') {
+    sessionConfig.store = RedisStore({url: process.env.REDIS_URI})
+  }
+
+  app.use(session(sessionConfig))
+
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({
     extended: true
