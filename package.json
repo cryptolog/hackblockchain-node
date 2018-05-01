@@ -11,6 +11,7 @@
     "test:integration": "mocha --recursive test/integration"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
