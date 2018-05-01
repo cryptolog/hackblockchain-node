@@ -10,7 +10,9 @@ module.exports = function (app) {
 router.get('/ad', function (req, res, next) {
   // render create ad form
   // have to check whether the current user's quota allows
-  return res.render('createAd')
+  if (req.user.quota > 0) {
+    return res.render('createAd')
+  }
 })
 
 // return the corresponding ad

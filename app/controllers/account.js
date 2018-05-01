@@ -45,7 +45,7 @@ router.post('/forgot', function (req, res, next) {
       mailOptions.text = resetUrl
       sgMail.send(mailOptions)
     }
-    res.render('password_reset_email_sent')
+    res.render('password_reset_success')
   })
 })
 

@@ -1,12 +1,18 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
+let shortid = require('shortid')
 let {isEmail, isAlpha} = require('validator')
 var passportLocalMongoose = require('passport-local-mongoose')
 
 var AccountSchema = new Schema({
+  _id: {
+    type: String,
+    default: shortid.generate
+  },
   email: {
     type: String,
     required: true,
+    unique: true,
     validate: {
       validator: function (v) {
         return isEmail(v)
@@ -36,8 +42,6 @@ var AccountSchema = new Schema({
   timestamps: true
 })
 
-AccountSchema.plugin(passportLocalMongoose, {
-  usernameField: 'email'
-})
+AccountSchema.plugin(passportLocalMongoose)
 
 mongoose.model('Account', AccountSchema)

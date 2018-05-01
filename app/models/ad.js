@@ -19,12 +19,12 @@ var AdSchema = new Schema({
     type: String,
     required: true,
     validate: {
-      validator: function (v) {
-        return isAlpha(v)
+      validator: function (input) {
+        return isAlpha(input)
       }
     }
   },
-  user_id: {type: Schema.Types.ObjectId, ref: 'User'}
+  user_id: {type: Schema.Types.ObjectId, ref: 'Account'}
 }, {
   timestamps: true
 })
