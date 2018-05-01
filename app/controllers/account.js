@@ -4,6 +4,14 @@ let passport = require('passport')
 let mongoose = require('mongoose')
 let Account = mongoose.model('Account')
 let jwt = require('jwt-simple')
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+let mailOptions = {
+  'from': 'noreply@hackblockcha.in',
+  'to': '',
+  'subject': 'Hackblockchain Password Reset'
+}
 
 module.exports = (app) => {
   app.use('/accounts', router)
@@ -33,15 +41,15 @@ router.post('/forgot', function (req, res, next) {
       let userId = result.id
       let payload = {userId, emailId}
       let resetToken = jwt.encode(payload, pwHash + '-' + createdAt)
-      let resetUrl = `https://www.hackblockcha.in/accounts/reset/${resetToken}/${userId}`
-      mailgun.send('template', resetUrl)
-      // create a link and send the email
+      let resetUrl = `https://www.hackblockcha.in/accounts/reset/${userId}/${resetToken}`
+      mailOptions.text = resetUrl
+      sgMail.send(mailOptions)
     }
     res.render('password_reset_email_sent')
   })
 })
 
-router.get('/reset/:token/:userid', function (req, res, next) {
+router.get('/reset/:userid/:token', function (req, res, next) {
   let {token, userid} = req.params
   Account.findById(userid, function (err, result) {
     if (err) throw err
@@ -66,9 +74,7 @@ router.post('/reset', function (req, res, next) {
   let {userid, newpassword} = req.body
   // TODO on this
   Account.findByIdAndUpdate(userid, {password: newpassword})
-
 })
-
 
 router.get('/signup', function (req, res, next) {
   res.render('signup')

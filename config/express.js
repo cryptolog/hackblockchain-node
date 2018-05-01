@@ -18,6 +18,9 @@ module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
   app.locals.ENV = env
   app.locals.ENV_DEVELOPMENT = env === 'development'
+  if (app.get('env') !== 'production') {
+    require('dotenv').load()
+  }
   app.set('views', config.root + '/app/views')
   app.set('view engine', 'nunjucks')
   nunjucks.configure(config.root + '/app/views', {
@@ -34,9 +37,6 @@ module.exports = function (app, config) {
     expires: expiryDate
   }
 
-  if (app.get('env') !== 'production') {
-    require('dotenv').load()
-  }
   if (app.get('env') === 'production') {
     sessionConfig.store = RedisStore({url: process.env.REDIS_URI})
   }
