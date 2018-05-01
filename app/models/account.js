@@ -1,13 +1,14 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-let shortid = require('shortid')
 let {isEmail, isAlpha} = require('validator')
 var passportLocalMongoose = require('passport-local-mongoose')
+let uuidv4 = require('uuid/v4')
 
 var AccountSchema = new Schema({
+  // todo replace this with a suitable alternative
   _id: {
     type: String,
-    default: shortid.generate
+    default: uuidv4()
   },
   email: {
     type: String,
