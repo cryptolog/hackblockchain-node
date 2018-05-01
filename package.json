@@ -39,6 +39,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "debug": "^3.1.0",
+    "dotenv": "^5.0.1",
     "gulp": "^3.9.0",
     "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",

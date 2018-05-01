@@ -34,6 +34,9 @@ module.exports = function (app, config) {
     expires: expiryDate
   }
 
+  if (app.get('env') !== 'production') {
+    require('dotenv').load()
+  }
   if (app.get('env') === 'production') {
     sessionConfig.store = RedisStore({url: process.env.REDIS_URI})
   }
