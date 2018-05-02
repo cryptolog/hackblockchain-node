@@ -5,7 +5,6 @@ var passportLocalMongoose = require('passport-local-mongoose')
 let uuidv4 = require('uuid/v4')
 
 var AccountSchema = new Schema({
-  // todo replace this with a suitable alternative
   _id: {
     type: String,
     default: uuidv4()

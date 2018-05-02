@@ -24,7 +24,7 @@ var AdSchema = new Schema({
       }
     }
   },
-  user_id: {type: Schema.Types.ObjectId, ref: 'Account'}
+  user_id: {type: Schema.Types.String, ref: 'Account'}
 }, {
   timestamps: true
 })
