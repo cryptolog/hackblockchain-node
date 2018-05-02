@@ -1,4 +1,4 @@
-{% extends './layout.nunjucks' %}
+{% extends 'layout.nunjucks' %}
 
 {% block head %}
     <link href="/css/custom-access.css" rel="stylesheet">

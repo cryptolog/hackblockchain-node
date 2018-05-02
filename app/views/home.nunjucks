@@ -9,7 +9,6 @@
 
 {% block body %}
     <body class="transition-fade">
-        <!-- HERO SECTION BEGINS HERE -->
         <section class="bg hero is-fullheight">
             <div class="hero-head">
                 <div class="has-text-centered">
@@ -47,22 +46,17 @@
             </div>
             <div class="hero-foot">
                 <div class="container has-text-centered">
-                    <a href="/signup" class="button is-outlined hero-button">Post upto 3 Jobs for Free</a>
+                    <a href="/accounts/signup" class="button is-outlined hero-button">Post a job for Free</a>
                     <br>
                     <span class="down-arrow">&darr;</span>
                 </div>
             </div>
         </section>
-        <!-- HERO SECTION ENDS HERE -->
-
-
-        <!-- ELEMENT-1 LATEST JOB SECTION STARTS HERE -->
         <div class="container has-text-centered posting-label">
-            <h2>LATEST JOBS</h2>
+            <h2>Latest Jobs</h2>
         </div>
         <div class="container post-container">
 
-            <!-- ELEMENT-1a LOOP THIS SECTION TO DISPLAY JOBS -->
             <div class="columns post is-centered">
                 <div id="999-999" class="column is-11-tablet is-10-widescreen posting-section" style="cursor:pointer" onclick="goToJobLink(id)">
                     <div class="columns has-text-left">
@@ -149,9 +143,7 @@
                 </div>
             </div>
         </div>
-        <!-- EMAIL SUBSCRIBER SECTION ENDS HERE -->
-
-        <!-- FOOTER SECTION STARTS HERE -->
+        <!-- footer -->
         <section class="bg hero footer ">
             <div class="hero-head ">
                 <div class="container has-text-centered ">
@@ -159,7 +151,5 @@
                 </div>
             </div>
         </section>
-        <!-- FOOTER JOB SECTION ENDS HERE -->
-        <!-- ELEMENT-3 ENDS HERE -->
     </body>
 {% endblock %}
