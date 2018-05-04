@@ -66,7 +66,8 @@ router.get('/reset/:userid/:token', function (req, res, next) {
       res.render('password_reset_form', {userid})
     } else {
       // token invalid
-      res.render('password_invalid_token')
+      var message = 'Sorry the token has expired or is invalid.'
+      res.render('message', {message})
     }
   })
 })
