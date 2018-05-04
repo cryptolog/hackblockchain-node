@@ -15,8 +15,7 @@
                             <img src="/img/close.svg" alt="">
                         </a>
                         <div class="column is-12 has-text-left">
-                            <p> If your email address exists in our system, an email will be sent to it shortly with the password reset instructions.
-                            Please check your inbox, and if you haven't received it, please check your junk mail folder.</p>
+                            <p>{{ message }}</p>
                         </div>
                     </div>
                 </div>

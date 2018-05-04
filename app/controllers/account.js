@@ -46,7 +46,8 @@ router.post('/forgot', function (req, res, next) {
       mailOptions.html = `<a href='${resetUrl}'>Click here to reset your password</a>`
       sgMail.send(mailOptions)
     }
-    res.render('password_reset_success')
+    var message = "If your email address exists in our system, an email will be sent to it shortly with the password reset instructions. Please check your inbox, and if you haven't received it, please check your junk mail folder."
+    res.render('message', {message})
   })
 })
 
