@@ -41,7 +41,8 @@ router.post('/forgot', function (req, res, next) {
       let userId = result.id
       let payload = {userId, emailId}
       let resetToken = jwt.encode(payload, pwHash + '-' + createdAt)
-      let resetUrl = `http://localhost:3000/accounts/reset/${userId}/${resetToken}`
+      let resetBase = process.env.RESET_URI
+      let resetUrl = `${resetBase}/accounts/reset/${userId}/${resetToken}`
       mailOptions.text = 'You just requested a password reset for your account.'
       mailOptions.html = `<a href='${resetUrl}'>Click here to reset your password</a>`
       sgMail.send(mailOptions)
