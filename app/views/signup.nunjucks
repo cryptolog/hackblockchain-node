@@ -2,7 +2,7 @@
 
 {% block head %}
     <link href="/css/custom-access.css" rel="stylesheet">
-    <title>Blockchain | Sign Up</title>
+    <title>HackBlockchain | Sign Up</title>
 {% endblock %}
 
 {% block body %}
@@ -34,7 +34,7 @@
                                 <input type="submit" class="button is-info" value="SIGN UP" />
                             </div>
                             <div class="column is-12 is-condensed">
-                                <a href="/login/sign-in.html" class="button has-text-white dark-blue">Existing User? Sign In</a>
+                                <a href="/accounts/login" class="button has-text-white dark-blue">Existing User? Sign In</a>
                             </div>
                         </div>
                     </div>
