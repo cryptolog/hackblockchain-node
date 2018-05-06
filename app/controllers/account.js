@@ -77,6 +77,8 @@ router.post('/reset', function (req, res, next) {
   let {userid, newpassword} = req.body
   // TODO on this
   Account.findByIdAndUpdate(userid, {password: newpassword})
+  var message = 'Your password has been successfully reset, you can now log in'
+  res.render('message', {message})
 })
 
 router.get('/signup', function (req, res, next) {

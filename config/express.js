@@ -36,10 +36,7 @@ module.exports = function (app, config) {
     secret: "/g*L.>HZ'smbPF3{X/:6@5c8v'yGL76rx`pK,)[6aKH^x",
     expires: expiryDate
   }
-
-  if (app.get('env') === 'production') {
-    sessionConfig.store = RedisStore({url: process.env.REDIS_URI})
-  }
+  sessionConfig.store = new RedisStore({url: process.env.REDIS_URI})
 
   app.use(session(sessionConfig))
 
