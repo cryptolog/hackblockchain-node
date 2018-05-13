@@ -94,3 +94,8 @@ router.post('/signup', function (req, res, next) {
   // login???
   res.redirect('/dashboard')
 })
+
+router.get('/activate/:token', function (req, res, next) {
+  let activationToken = req.params.token
+  // decrypt this
+})
