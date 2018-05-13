@@ -1,18 +1,24 @@
 let express = require('express')
 let router = express.Router()
-// var Ad = mongoose.model('Ad')
+let mongoose = require('mongoose')
+let Ad = mongoose.model('Ad')
 
 module.exports = function (app) {
   app.use('/', router)
 }
 
-router.get('/', function (req, res, next) {
-  // send latest jobs here
-  // get the latest ads
-  res.render('home')
+router.get('/', async function (req, res, next) {
+  let latestAds = null
+  try {
+    latestAds = await Ad.find()
+  } catch (e) {
+    // this is e
+    throw e
+  }
+  res.render('home', {ads: latestAds})
 })
 
 router.get('/dashboard', function (req, res, next) {
-  // do something here
-  res.render('dashboard')
+  let active = req.user.active
+  res.render('dashboard', {active})
 })
