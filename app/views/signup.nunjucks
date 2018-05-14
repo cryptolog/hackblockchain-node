@@ -7,7 +7,7 @@
 
 {% block body %}
     <body>
-        <form id="signUpForm" action="/signup" method="post">
+        <form id="signUpForm" action="/accounts/signup" method="post">
             <section class="bg hero is-fullheight">
                 <div class="hero-body">
                     <div class="container pop-up">

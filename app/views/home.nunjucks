@@ -18,8 +18,8 @@
                             <img src="/img/blockchain_logo.png">
                         </div>
                         <div class="column is-mobile-2 has-text-right">
-                            <a href="/login" class="button is-outlined hero-button is-hidden-mobile" style="margin-right:24px;">SIGN-IN</a>
-                            <a href="/login" class="is-hidden-tablet" style="margin-right:24px;">
+                            <a href="/accounts/login" class="button is-outlined hero-button is-hidden-mobile" style="margin-right:24px;">SIGN-IN</a>
+                            <a href="/accounts/login" class="is-hidden-tablet" style="margin-right:24px;">
                                 <img src="/img/login_white.png" alt="sign-in" style="height:30px; width:30px; opacity:0.8">
                             </a>
                         </div>

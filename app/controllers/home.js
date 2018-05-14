@@ -10,7 +10,7 @@ module.exports = function (app) {
 router.get('/', async function (req, res, next) {
   let latestAds = null
   try {
-    latestAds = await Ad.find().limit(5)
+    latestAds = await Ad.find({}).limit(5)
   } catch (e) {
     throw e
   }

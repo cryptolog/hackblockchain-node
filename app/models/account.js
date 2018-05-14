@@ -19,7 +19,6 @@ var AccountSchema = new Schema({
       }
     }
   },
-  password: {type: String, required: true},
   quota: {type: Number, default: 1, min: 1},
   active: {type: Boolean, default: false},
   first: {
@@ -42,6 +41,6 @@ var AccountSchema = new Schema({
   timestamps: true
 })
 
-AccountSchema.plugin(passportLocalMongoose)
+AccountSchema.plugin(passportLocalMongoose, {usernameField: 'email'})
 
 mongoose.model('Account', AccountSchema)
