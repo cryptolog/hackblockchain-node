@@ -18,6 +18,6 @@ router.get('/', async function (req, res, next) {
 })
 
 router.get('/dashboard', function (req, res, next) {
-  let active = req.user.active
-  res.render('dashboard', {active})
+  // send the user's ads here
+  res.render('dashboard')
 })

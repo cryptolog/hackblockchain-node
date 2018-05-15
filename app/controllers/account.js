@@ -81,11 +81,12 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
 
 router.post('/reset', async function (req, res, next) {
   if (req.session.userid) {
-    let {userid, newpassword} = req.body
+    let {userid, password} = req.body
 
     try {
       if (req.session.userid === userid) {
-        await Account.findByIdAndUpdate(req.session.userid, {password: newpassword}, {})
+        let user = await Account.findById(req.session.userid)
+        user.changePasword(password)
       }
     } catch (e) {
       console.err(e)
@@ -107,7 +108,5 @@ router.post('/signup', async function (req, res, next) {
   // create account and log in
   let user = await Account.register(new Account({email: username}), password)
   req.user = user
-  // TODO
-  // send an activation email
   res.redirect('/dashboard')
 })
