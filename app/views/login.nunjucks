@@ -7,7 +7,7 @@
 
 {% block body %}
     <body>
-        <form id="signInForm" action="/user/" method="post">
+        <form id="signInForm" action="/accounts/login/" method="post">
             <section class="bg hero is-fullheight">
                 <div class="hero-body">
                     <div class="container pop-up">
@@ -17,7 +17,7 @@
                             </a>
                             <div class="column is-12 has-text-left">
                                 <h2 class="label">Email</h2>
-                                <input id="emailInput" name="username" class="input is-medium-desktop" type="text" placeholder="hello@domain.com">
+                                <input id="emailInput" name="email" class="input is-medium-desktop" type="text" placeholder="hello@domain.com">
                                 <span id="emailInputHelp" class="help is-danger is-hidden">Please enter a valid email address</span>
                             </div>
                             <div class="column is-12 has-text-left">

@@ -18,7 +18,7 @@ module.exports = function (app, config) {
   app.locals.ENV = env
   app.locals.ENV_DEVELOPMENT = env === 'development'
   if (app.get('env') !== 'production') {
-    require('dotenv').load()
+    require('dotenv').config()
   }
   app.set('views', config.root + '/app/views')
   app.set('view engine', 'nunjucks')
