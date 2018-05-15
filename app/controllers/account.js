@@ -8,10 +8,10 @@ const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 let mailOptions = {
-  'from': 'noreply@hackblockcha.in',
-  'to': '',
-  'subject': 'Hackblockchain Password Reset',
-  'text': 'Please click the link below to reset your password:'
+  from: 'noreply@hackblockcha.in',
+  to: '',
+  subject: 'Hackblockchain Password Reset',
+  text: 'Please click the link below to reset your password:'
 }
 
 module.exports = (app) => {
@@ -41,6 +41,7 @@ router.post('/forgot', async function (req, res, next) {
     throw e
   }
   if (account) {
+    mailOptions.to = emailId
     let pwHash = account.hash
     let createdAt = account.createdAt
     let userId = account.id
@@ -86,7 +87,7 @@ router.post('/reset', async function (req, res, next) {
     try {
       if (req.session.userid === userid) {
         let user = await Account.findById(req.session.userid)
-        user.changePasword(password)
+        await user.changePasword(password)
       }
     } catch (e) {
       console.err(e)

@@ -46,7 +46,7 @@
             </div>
             <div class="hero-foot">
                 <div class="container has-text-centered">
-                    <a href="/accounts/signup" class="button is-outlined hero-button">Post a job for Free</a>
+                    <a href="/accounts/signup" class="button is-outlined hero-button">Post A Job For Free</a>
                     <br>
                     <span class="down-arrow">&darr;</span>
                 </div>
