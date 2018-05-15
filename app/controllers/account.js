@@ -111,8 +111,3 @@ router.post('/signup', async function (req, res, next) {
   // send an activation email
   res.redirect('/dashboard')
 })
-
-router.get('/activate/:token', async function (req, res, next) {
-  let activationToken = req.params.token
-  // decrypt this
-})
