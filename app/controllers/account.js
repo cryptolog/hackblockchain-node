@@ -35,7 +35,7 @@ router.post('/forgot', async function (req, res, next) {
   const {emailId} = req.body
   let account = null
   try {
-    account = await Account.find({email: emailId})
+    account = await Account.findOne({email: emailId})
   } catch (e) {
     throw e
   }
@@ -48,7 +48,7 @@ router.post('/forgot', async function (req, res, next) {
     let resetToken = jwt.encode(payload, pwHash + '-' + createdAt)
     let resetBaseUrl = process.env.RESET_URI
     let resetUrl = `${resetBaseUrl}/accounts/reset/${userId}/${resetToken}`
-    mailOptions.html = `Please click the link below to reset your password:<br /><a href='${resetUrl}'>Click here to reset your password</a>`
+    mailOptions.html = `Please click the link below to reset your password:<br /><a href='${resetUrl}'>Reset Password</a>`
     sgMail.send(mailOptions)
   }
   const message = "If your email address exists in our system, an email will be sent to it shortly with the password reset instructions. Please check your inbox, and if you haven't received it, please check your junk mail folder."
@@ -68,11 +68,11 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
     decoded = jwt.decode(token, account.hash + '-' + account.createdAt)
   } catch (e) {
     // decode failed, suppress the error
-    console.err(e)
+    console.log(e)
   }
   if (decoded && decoded.emailId === account.email) {
     req.session.userid = userid
-    res.render('password_reset_form', {userid})
+    res.render('password_reset_form')
   } else {
     const message = 'Sorry the token has expired or is invalid.'
     res.render('message', {message})
