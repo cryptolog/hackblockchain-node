@@ -10,8 +10,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 let mailOptions = {
   from: 'noreply@hackblockcha.in',
   to: '',
-  subject: 'Hackblockchain Password Reset',
-  text: 'Please click the link below to reset your password:'
+  subject: 'Hackblockchain Password Reset'
 }
 
 module.exports = (app) => {
@@ -44,12 +43,12 @@ router.post('/forgot', async function (req, res, next) {
     mailOptions.to = emailId
     let pwHash = account.hash
     let createdAt = account.createdAt
-    let userId = account.id
+    let userId = account._id
     let payload = {userId, emailId}
     let resetToken = jwt.encode(payload, pwHash + '-' + createdAt)
     let resetBaseUrl = process.env.RESET_URI
     let resetUrl = `${resetBaseUrl}/accounts/reset/${userId}/${resetToken}`
-    mailOptions.html = `<br /><a href='${resetUrl}'>Click here to reset your password</a>`
+    mailOptions.html = `Please click the link below to reset your password:<br /><a href='${resetUrl}'>Click here to reset your password</a>`
     sgMail.send(mailOptions)
   }
   const message = "If your email address exists in our system, an email will be sent to it shortly with the password reset instructions. Please check your inbox, and if you haven't received it, please check your junk mail folder."
