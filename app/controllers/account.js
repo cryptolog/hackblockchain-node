@@ -41,7 +41,7 @@ router.post('/forgot', async function (req, res, next) {
     throw e
   }
   if (account) {
-    let pwHash = account.password
+    let pwHash = account.hash
     let createdAt = account.createdAt
     let userId = account.id
     let payload = {userId, emailId}
@@ -65,7 +65,7 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
   }
   let decoded = null
   try {
-    decoded = jwt.decode(token, account.password + '-' + account.createdAt)
+    decoded = jwt.decode(token, account.hash + '-' + account.createdAt)
   } catch (e) {
     // decode failed, suppress the error
     console.err(e)
