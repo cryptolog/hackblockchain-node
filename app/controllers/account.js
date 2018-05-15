@@ -9,8 +9,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 let mailOptions = {
   from: 'noreply@hackblockcha.in',
-  to: '',
-  subject: 'Hackblockchain Password Reset'
+  subject: 'Hackblockchain | Password Reset'
 }
 
 module.exports = (app) => {
@@ -64,11 +63,13 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
     throw e
   }
   let decoded = null
-  try {
-    decoded = jwt.decode(token, account.hash + '-' + account.createdAt)
-  } catch (e) {
-    // decode failed, suppress the error
-    console.log(e)
+  if (account) {
+    try {
+      decoded = jwt.decode(token, account.hash + '-' + account.createdAt)
+    } catch (e) {
+      // decode failed, suppress the error
+      console.log(e)
+    }
   }
   if (decoded && decoded.emailId === account.email) {
     req.session.userid = userid
@@ -79,23 +80,19 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
   }
 })
 
-router.post('/reset', async function (req, res, next) {
+router.post('/reset', async function (req, res) {
   if (req.session.userid) {
-    let {userid, password} = req.body
-
+    let {password} = req.body
     try {
-      if (req.session.userid === userid) {
-        let user = await Account.findById(req.session.userid)
-        await user.changePasword(password)
-      }
+      let user = await Account.findById(req.session.userid)
+      await user.setPassword(password)
     } catch (e) {
-      console.err(e)
       throw e
     }
   } else {
     throw new Error('Page not found')
   }
-  var message = 'Your password has been successfully reset, you can now log in'
+  const message = 'Your password has been successfully reset, you can now log in'
   res.render('message', {message})
 })
 
