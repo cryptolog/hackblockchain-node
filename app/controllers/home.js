@@ -18,6 +18,10 @@ router.get('/', async function (req, res, next) {
 })
 
 router.get('/dashboard', function (req, res, next) {
+  if (req.user) {
   // send the user's ads here
-  res.render('dashboard')
+    res.render('dashboard')
+  } else {
+    res.render('message_w_link', {title: 'Dashboard', href='/ads/create', linkName: 'Create an ad', message: `You haven't posted an ads yet!`})
+  }
 })

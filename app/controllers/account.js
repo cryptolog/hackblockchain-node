@@ -9,7 +9,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 let mailOptions = {
   from: 'noreply@hackblockcha.in',
-  subject: 'Hackblockchain | Password Reset'
+  subject: 'Password Reset'
 }
 
 module.exports = (app) => {
@@ -40,11 +40,10 @@ router.post('/forgot', async function (req, res, next) {
   }
   if (account) {
     mailOptions.to = emailId
-    let pwHash = account.hash
-    let createdAt = account.createdAt
+    let pwHash = account.get('hash')
     let userId = account._id
     let payload = {userId, emailId}
-    let resetToken = jwt.encode(payload, pwHash + '-' + createdAt)
+    let resetToken = jwt.encode(payload, pwHash)
     let resetBaseUrl = process.env.RESET_URI
     let resetUrl = `${resetBaseUrl}/accounts/reset/${userId}/${resetToken}`
     mailOptions.html = `Please click the link below to reset your password:<br /><a href='${resetUrl}'>Reset Password</a>`
@@ -65,7 +64,7 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
   let decoded = null
   if (account) {
     try {
-      decoded = jwt.decode(token, account.hash + '-' + account.createdAt)
+      decoded = jwt.decode(token, account.get('hash'))
     } catch (e) {
       // decode failed, suppress the error
       console.log(e)
@@ -86,6 +85,7 @@ router.post('/reset', async function (req, res) {
     try {
       let user = await Account.findById(req.session.userid)
       await user.setPassword(password)
+      await user.save()
     } catch (e) {
       throw e
     }
@@ -93,7 +93,7 @@ router.post('/reset', async function (req, res) {
     throw new Error('Page not found')
   }
   const message = 'Your password has been successfully reset, you can now log in'
-  res.render('message', {message})
+  res.render('message_w_link', {message, href: '/', title: 'Hackblockchain | Reset Password', linkName: 'Login'})
 })
 
 router.get('/signup', function (req, res, next) {
