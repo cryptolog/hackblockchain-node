@@ -1,25 +1,25 @@
 {% extends 'layout.nunjucks' %}
 
 {% block head %}
-    <link href="/css/custom-access.css" rel="stylesheet">
-    <title>HackBlockchain | Forgot Password</title>
+  <link href="/css/custom-access.css" rel="stylesheet">
+  <title>HackBlockchain | Forgot Password</title>
 {% endblock %}
 
 {% block body %}
-    <body>
-        <section class="bg hero is-fullheight">
-            <div class="hero-body">
-                <div class="container pop-up">
-                    <div class="columns is-multiline has-text-centered">
-                        <a href="/" class="close">
-                            <img src="/img/close.svg" alt="">
-                        </a>
-                        <div class="column is-12 has-text-left">
-                            <p>{{ message }}</p>
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <section class="bg hero is-fullheight">
+      <div class="hero-body">
+        <div class="container pop-up">
+          <div class="columns is-multiline has-text-centered">
+            <a href="/" class="close">
+              <img src="/img/close.svg" alt="">
+            </a>
+            <div class="column is-12 has-text-left">
+              <p>{{ message }}</p>
             </div>
-        </section>
-    </body>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 {% endblock %}

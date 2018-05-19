@@ -1,24 +1,24 @@
 {% extends 'layout.nunjucks' %}
 
 {% block head %}
-    <link href="/css/custom-access.css" rel="stylesheet">
-    <title>{{ title }}</title>
+  <link href="/css/custom-access.css" rel="stylesheet">
+  <title>{{ title }}</title>
 {% endblock %}
 
 {% block body %}
-    <body>
-        <section class="bg hero is-fullheight">
-            <div class="hero-body">
-                <div class="container pop-up">
-                    <div class="columns is-multiline has-text-centered">
-                        <div class="column is-12 has-text-left">
-                            <p>{{ message }}</p>
-                            <br />
-                            <a href="{{ href }}">{{ linkName }}</a>
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <section class="bg hero is-fullheight">
+      <div class="hero-body">
+        <div class="container pop-up">
+          <div class="columns is-multiline has-text-centered">
+            <div class="column is-12 has-text-left">
+              <p>{{ message }}</p>
+              <br />
+              <a href="{{ href }}">{{ linkName }}</a>
             </div>
-        </section>
-    </body>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 {% endblock %}

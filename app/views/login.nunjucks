@@ -1,48 +1,48 @@
 {% extends 'layout.nunjucks' %}
 
 {% block head %}
-    <link href="/css/custom-access.css" rel="stylesheet">
-    <title>HackBlockchain | Sign In</title>
+  <link href="/css/custom-access.css" rel="stylesheet">
+  <title>HackBlockchain | Sign In</title>
 {% endblock %}
 
 {% block body %}
-    <body>
-        <form id="signInForm" action="/accounts/login/" method="post">
-            <section class="bg hero is-fullheight">
-                <div class="hero-body">
-                    <div class="container pop-up">
-                        <div class="columns is-multiline has-text-centered">
-                            <a href="/" class="close">
-                                <img src="/img/close.svg" alt="">
-                            </a>
-                            <div class="column is-12 has-text-left">
-                                <h2 class="label">Email</h2>
-                                <input id="emailInput" name="email" class="input is-medium-desktop" type="text" placeholder="hello@domain.com">
-                                <span id="emailInputHelp" class="help is-danger is-hidden">Please enter a valid email address</span>
-                            </div>
-                            <div class="column is-12 has-text-left">
-                                <h2 class="label">Password</h2>
-                                <input id="passwordInput" name="password" class="input is-medium-desktop" type="password" placeholder="Password">
-                                <span id="passwordInputHelp" class="help is-danger is-hidden">Please enter your password</span>
-                            </div>
-                            <!-- ELEMENT 5b - UNIQUE FORGOT PASSWORD -->
-                            <div class="column is-12 has-text-left reset-section">
-                                <a id="emailPassword" class="reset-link" href="/accounts/forgot">Forgot password?</a>
-                            </div>
-                            <!-- END OF ELEMENT 5b-->
-                            <!-- ELEMENT 5d - SIGN IN BUTTONS -->
-                            <div class="column is-12 is-condensed">
-                                <input type="submit" class="button is-info" value="Sign In" />
-                            </div>
-                            <div class="column is-12 is-condensed">
-                                <a href="/signup" class="button has-text-white dark-blue">New User? Sign Up</a>
-                            </div>
-                            <!-- END OF ELEMENT 5d -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </form>
-        <!-- END OF ELEMENT 5 -->
-    </body>
+  <body>
+    <form id="signInForm" action="/accounts/login/" method="post">
+      <section class="bg hero is-fullheight">
+        <div class="hero-body">
+          <div class="container pop-up">
+            <div class="columns is-multiline has-text-centered">
+              <a href="/" class="close">
+                <img src="/img/close.svg" alt="">
+              </a>
+              <div class="column is-12 has-text-left">
+                <h2 class="label">Email</h2>
+                <input id="emailInput" name="email" class="input is-medium-desktop" type="text" placeholder="hello@domain.com">
+                <span id="emailInputHelp" class="help is-danger is-hidden">Please enter a valid email address</span>
+              </div>
+              <div class="column is-12 has-text-left">
+                <h2 class="label">Password</h2>
+                <input id="passwordInput" name="password" class="input is-medium-desktop" type="password" placeholder="Password">
+                <span id="passwordInputHelp" class="help is-danger is-hidden">Please enter your password</span>
+              </div>
+              <!-- ELEMENT 5b - UNIQUE FORGOT PASSWORD -->
+              <div class="column is-12 has-text-left reset-section">
+                <a id="emailPassword" class="reset-link" href="/accounts/forgot">Forgot password?</a>
+              </div>
+              <!-- END OF ELEMENT 5b-->
+              <!-- ELEMENT 5d - SIGN IN BUTTONS -->
+              <div class="column is-12 is-condensed">
+                <input type="submit" class="button is-info" value="Sign In" />
+              </div>
+              <div class="column is-12 is-condensed">
+                <a href="/signup" class="button has-text-white dark-blue">New User? Sign Up</a>
+              </div>
+              <!-- END OF ELEMENT 5d -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+    <!-- END OF ELEMENT 5 -->
+  </body>
 {% endblock %}
