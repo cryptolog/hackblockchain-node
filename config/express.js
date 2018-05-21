@@ -9,6 +9,7 @@ var methodOverride = require('method-override')
 var nunjucks = require('nunjucks')
 var session = require('express-session')
 var passport = require('passport')
+let LocalStrategy = require('passport-local').Strategy
 var helmet = require('helmet')
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000)
 var RedisStore = require('connect-redis')(session)
@@ -50,6 +51,11 @@ module.exports = function (app, config) {
   app.use(passport.initialize())
   app.use(passport.session())
   app.use(helmet())
+
+  let Account = require('../app/models/account')
+  passport.use(Account.createStrategy())
+  passport.serializeUser(Account.serializeUser())
+  passport.deserializeUser(Account.deserializeUser())
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js')
   controllers.forEach(function (controller) {

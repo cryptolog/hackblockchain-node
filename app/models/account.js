@@ -43,3 +43,5 @@ var AccountSchema = new Schema({
 AccountSchema.plugin(passportLocalMongoose, {usernameField: 'email'})
 
 mongoose.model('Account', AccountSchema)
+
+module.exports = mongoose.model('Account', AccountSchema)
