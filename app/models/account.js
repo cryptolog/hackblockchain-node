@@ -22,7 +22,6 @@ var AccountSchema = new Schema({
   quota: {type: Number, default: 1, min: 1},
   first: {
     type: String,
-    default: null,
     validate: {
       validator: function (v) {
         return isAlpha(v)
@@ -31,7 +30,6 @@ var AccountSchema = new Schema({
   },
   last: {
     type: String,
-    default: null,
     validate: {
       validator: function (v) {
         return isAlpha(v)

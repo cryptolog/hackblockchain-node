@@ -1,0 +1,9 @@
+{% extends '../layout.nunjucks' %}
+
+{% block head %}
+{# a link and title and so on #}
+{% endblock %}
+
+{% block body %}
+{# should contain a body tag #}
+{% endblock %}
