@@ -133,3 +133,8 @@ router.post('/signup', async function (req, res, next) {
   req.user = user
   res.redirect('/dashboard')
 })
+
+router.get('/logout', function (req, res, next) {
+  req.logout()
+  res.redirect('/')
+})

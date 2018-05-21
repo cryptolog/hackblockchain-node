@@ -9,7 +9,6 @@ var methodOverride = require('method-override')
 var nunjucks = require('nunjucks')
 var session = require('express-session')
 var passport = require('passport')
-let LocalStrategy = require('passport-local').Strategy
 var helmet = require('helmet')
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000)
 var RedisStore = require('connect-redis')(session)

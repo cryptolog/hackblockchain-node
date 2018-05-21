@@ -20,15 +20,22 @@ router.get('/', async function (req, res, next) {
 })
 
 router.get('/dashboard', function (req, res, next) {
+  // if the user is logged in && has some ads
   if (req.user) {
-    // send the user's ads here
-    res.render('dashboard')
+    // fetch the user's ads
+    // if none
+    let ads = req.user.ads
+    if (ads) {
+      res.render('dashboard', {ads})
+    } else {
+      res.render('message_w_link', {
+        title: 'Dashboard',
+        href: '/ad/new',
+        linkName: 'Create an ad',
+        message: `You haven't posted an ads yet!`
+      })
+    }
   } else {
-    res.render('message_w_link', {
-      title: 'Dashboard',
-      href: '/ads/create',
-      linkName: 'Create an ad',
-      message: `You haven't posted an ads yet!`
-    })
+    res.status(401).send('<h3>401</h3><h6>Unauthorized</h6>')
   }
 })
