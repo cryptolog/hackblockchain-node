@@ -19,20 +19,18 @@ router.get('/', async function (req, res, next) {
   })
 })
 
-router.get('/dashboard', function (req, res, next) {
-  // if the user is logged in && has some ads
-  if (req.user) {
-    // fetch the user's ads
-    // if none
-    let ads = req.user.ads
+router.get('/dashboard', async function (req, res, next) {
+  let user = req.user
+  if (user) {
+    const ads = await Ad.find({userid: user._id})
     if (ads) {
       res.render('dashboard', {ads})
     } else {
       res.render('message_w_link', {
         title: 'Dashboard',
         href: '/ad/new',
-        linkName: 'Create an ad',
-        message: `You haven't posted an ads yet!`
+        linkName: 'Create your first ad',
+        message: `You haven't posted any ads yet!`
       })
     }
   } else {
