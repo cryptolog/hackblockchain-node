@@ -2,13 +2,8 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 let {isEmail, isAlpha} = require('validator')
 var passportLocalMongoose = require('passport-local-mongoose')
-let uuidv4 = require('uuid/v4')
 
 var AccountSchema = new Schema({
-  _id: {
-    type: String,
-    default: uuidv4()
-  },
   email: {
     type: String,
     required: true,

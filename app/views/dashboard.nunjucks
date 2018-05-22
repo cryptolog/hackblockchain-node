@@ -1,4 +1,6 @@
 {% extends 'layout.nunjucks' %}
 {% block head %}
+{% endblock %}
 
+{% block body %}
 {% endblock %}

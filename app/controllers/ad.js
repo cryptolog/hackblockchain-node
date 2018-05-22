@@ -32,4 +32,5 @@ router.post('/new', function (req, res, next) {
 router.patch('/:id', function (req, res, next) {
   const adId = req.params.id
   // do something here
+  console.log(adId)
 })
