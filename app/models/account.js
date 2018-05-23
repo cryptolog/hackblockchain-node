@@ -14,7 +14,7 @@ var AccountSchema = new Schema({
       }
     }
   },
-  quota: {type: Number, default: 1, min: 1},
+  quota: {type: Number, default: 3, min: 1},
   first: {
     type: String,
     validate: {
