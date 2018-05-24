@@ -23,7 +23,7 @@ router.get('/dashboard', async function (req, res, next) {
   let user = req.user
   if (user) {
     const ads = await Ad.find({userid: user._id})
-    if (ads) {
+    if (ads.length > 0) {
       res.render('dashboard', {ads})
     } else {
       res.render('message_w_link', {

@@ -121,17 +121,24 @@ router.get('/signup', function (req, res, next) {
   res.render('signup')
 })
 
-router.post('/signup', async function (req, res, next) {
+router.post('/signup', function (req, res, next) {
   let {
-    username,
+    email,
     password
   } = req.body
   // create account and log in
-  let user = await Account.register(new Account({
-    email: username
-  }), password)
-  req.user = user
-  res.redirect('/dashboard')
+  Account.register(new Account({email}), password, function (err) {
+    if (err) {
+      console.log(err)
+      next(err)
+    }
+    res.render('message_w_link', {
+      message: 'Registration successful.',
+      href: '/accounts/login',
+      title: 'Registration confirmation',
+      linkName: 'Login'
+    })
+  })
 })
 
 router.get('/logout', function (req, res, next) {

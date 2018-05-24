@@ -29,12 +29,16 @@ module.exports = function (app, config) {
 
   app.use(favicon(config.root + '/public/img/favicon.ico'))
   app.use(logger('dev'))
-
-  var sessionConfig = {
+  let sessionConfig = {
     httpOnly: true,
     secret: "/g*L.>HZ'smbPF3{X/:6@5c8v'yGL76rx`pK,)[6aKH^x",
-    expires: expiryDate
+    expires: expiryDate,
+    name: 'sessn'
   }
+  if (app.get('env') === 'production') {
+    sessionConfig.secure = true
+  }
+
   sessionConfig.store = new RedisStore({url: process.env.REDIS_URI})
 
   app.use(session(sessionConfig))
