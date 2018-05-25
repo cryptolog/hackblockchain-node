@@ -73,7 +73,8 @@ router.post('/forgot', async function (req, res, next) {
   }
   const message = "If your email address exists in our system, an email will be sent to it shortly with the password reset instructions. Please check your inbox, and if you haven't received it, please check your junk mail folder."
   res.render('message', {
-    message
+    message,
+    title: 'Hackblockchain | Forgot Password'
   })
 })
 
@@ -103,7 +104,8 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
   } else {
     const message = 'Sorry the token has expired or is invalid.'
     res.render('message', {
-      message
+      message,
+      title: 'Hackblockchain | Forgot Password'
     })
   }
 })
