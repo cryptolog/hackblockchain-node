@@ -16,6 +16,15 @@
             </div>
 
           </div>
+          {% if message %}
+          <article class="message is-success">
+            <div class="message-header">
+              <p>Success</p>
+              <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">{{ message }}</div>
+          </article>
+          {% endif %}
           <div class="column is-4-tablet is-4-desktop is-1-fullscreen">
             <div class="columns is-mobile">
               <div class="column is-6">
