@@ -21,7 +21,7 @@ router.get('/login', async function (req, res, next) {
   if (req.user) {
     const ads = await Ad.find({userid: req.user._id})
     if (ads.length > 0) {
-      res.render('dashboard', {ads})
+      res.render('account/dashboard', {ads})
     } else {
       res.render('message_w_link', {
         title: 'Dashboard',
@@ -42,7 +42,7 @@ router.post('/login', passport.authenticate('local', {
 }))
 
 router.get('/forgot', function (req, res, next) {
-  res.render('password_reset')
+  res.render('account/password_reset')
 })
 
 router.post('/forgot', async function (req, res, next) {
@@ -100,7 +100,7 @@ router.get('/reset/:userid/:token', async function (req, res, next) {
   }
   if (decoded && decoded.emailId === account.email) {
     req.session.userid = userid
-    res.render('password_reset_form')
+    res.render('account/password_reset_form')
   } else {
     const message = 'Sorry the token has expired or is invalid.'
     res.render('message', {
@@ -135,7 +135,7 @@ router.post('/reset', async function (req, res) {
 })
 
 router.get('/signup', function (req, res, next) {
-  res.render('signup')
+  res.render('account/signup')
 })
 
 router.post('/signup', function (req, res, next) {
@@ -147,7 +147,7 @@ router.post('/signup', function (req, res, next) {
   Account.register(new Account({email}), password, function (err) {
     if (err) {
       if (err.name === 'UserExistsError') {
-        res.render('signup', {message: 'Sorry, the email already exists in our database.'})
+        res.render('accuont/signup', {message: 'Sorry, the email already exists in our database.'})
       } else {
         console.log(err)
         next(err)
