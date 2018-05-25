@@ -15,6 +15,15 @@
               <a href="/" class="close">
                 <img src="/img/close.svg" alt="">
               </a>
+              {% if message %}
+              <article class="message is-danger">
+                <div class="message-header">
+                  <p>Error</p>
+                  <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">{{ message }}</div>
+              </article>
+              {% endif %}
               <div class="column is-12 has-text-left">
                 <h2 class="label">Email</h2>
                 <input id="emailInput" name="email" class="input is-medium-desktop" type="text" placeholder="hello@domain.com">

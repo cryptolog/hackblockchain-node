@@ -11,7 +11,7 @@ router.get('/new', function (req, res, next) {
   // render create ad form
   // have to check whether the current user's quota allows
   if (req.user.quota > 0) {
-    return res.render('job/new.nunjucks')
+    return res.render('ad/new.nunjucks')
   }
 })
 
