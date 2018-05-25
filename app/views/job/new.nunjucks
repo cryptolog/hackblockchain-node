@@ -23,31 +23,33 @@
                     <h2>JOB DETAILS</h2>
                   </div>
                   <div class="column is-4">
-                    <h3 class="label is-hidden-mobile">JOB TITLE</h3>
+                    <h3 class="label is-hidden-mobile">Title</h3>
                     <input id="titleInput" name="title" class="input is-medium-desktop" type="text" placeholder="Job Title">
                     <span id="titleInputHelp" class="help is-danger is-hidden">Please enter a title</span>
                   </div>
                   <div class="column is-4">
-                    <h3 class="label is-hidden-mobile">JOB LOCATION</h3>
+                    <h3 class="label is-hidden-mobile">Location</h3>
                     <input id="jobLocationInput" name="job_location" class="input" type="text" placeholder="Job Location">
                     <span id="jobLocationInputHelp" class="help is-danger is-hidden">Please enter a job location</span>
                   </div>
                   <div class="column is-4">
-                    <h3 class="label is-hidden-mobile">JOB TYPE</h3>
+                    <h3 class="label is-hidden-mobile">Type</h3>
                     <div class="select is-full-width">
                       <select name="job_status" class="is-full-width">
                         <option>Full-time</option>
                         <option>Part-time</option>
+                        <option>Contract</option>
+                        <option>Internship</option>
                       </select>
                     </div>
                   </div>
                   <div class="column is-12">
-                    <h3 class="label is-hidden-mobile">JOB DESCRIPTION</h3>
+                    <h3 class="label is-hidden-mobile">Description</h3>
                     <textarea id="descriptionInput" name="description" class="textarea" rows="10" placeholder="Job Description"></textarea>
                     <span id="descriptionInputHelp" class="help is-danger is-hidden">Please enter a job description</span>
                   </div>
                   <div class="column is-12">
-                    <h3 class="label is-hidden-mobile">LINK TO APPLY</h3>
+                    <h3 class="label is-hidden-mobile">Where/How to Apply</h3>
                     <input id="applyLinkInput" name="application_url" class="input" type="text" placeholder="Link to apply">
                     <span id="applyLinkInputHelp" class="help is-danger is-hidden">Must begin with http:// or www.</span>
                   </div>
@@ -55,18 +57,13 @@
                     <h2>COMPANY DETAILS</h2>
                   </div>
                   <div class="column is-3">
-                    <h3 class="label is-hidden-mobile">COMPANY NAME</h3>
+                    <h3 class="label is-hidden-mobile">Name</h3>
                     <input id="companyInput" name="company_name" class="input is-normal" type="text" placeholder="Company Name">
                     <span id="companyInputHelp" class="help is-danger is-hidden">Please enter your company name</span>
                   </div>
-                  <div class="column is-3">
-                    <h3 class="label is-hidden-mobile">COMPANY LOCATION</h3>
-                    <input id="locationInput" name="company_location" class="input" type="text" placeholder="Company Location">
-                    <span id="locationInputHelp" class="help is-danger is-hidden">Please enter the job location</span>
-                  </div>
                   <div class="column is-3 column-logo">
                     <div class="columns"></div>
-                    <h3 class="label is-hidden-mobile">COMPANY LOGO</h3>
+                    <h3 class="label is-hidden-mobile">Logo</h3>
                     <div class="file button is-info is-full-width">
                       <label class="file-label">
                         <input id="companyLogo" class="file-input" type="file">
@@ -83,7 +80,7 @@
                     <input type="hidden" id="imagebase64" name="company_logo">
                   </div>
                   <div class="column is-12">
-                    <h3 class="label is-hidden-mobile">COMPANY WEBSITE</h3>
+                    <h3 class="label is-hidden-mobile">Company Website</h3>
                     <input id="websiteInput" name="company_url" class="input" type="text" placeholder="Company Website">
                     <span id="websiteInputHelp" class="help is-danger is-hidden">Please enter your website</span>
                   </div>
