@@ -6,6 +6,7 @@ let Account = mongoose.model('Account')
 let jwt = require('jwt-simple')
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+let Ad = mongoose.model('Ad')
 
 let mailOptions = {
   from: 'noreply@hackblockcha.in',
@@ -16,8 +17,22 @@ module.exports = (app) => {
   app.use('/accounts', router)
 }
 
-router.get('/login', function (req, res, next) {
-  res.render('login')
+router.get('/login', async function (req, res, next) {
+  if (req.user) {
+    const ads = await Ad.find({userid: req.user._id})
+    if (ads.length > 0) {
+      res.render('dashboard', {ads})
+    } else {
+      res.render('message_w_link', {
+        title: 'Dashboard',
+        href: '/ad/new',
+        linkName: 'Create your first ad',
+        message: `You haven't posted any ads yet!`
+      })
+    }
+  } else {
+    res.render('login')
+  }
 })
 
 router.post('/login', passport.authenticate('local', {
@@ -132,12 +147,7 @@ router.post('/signup', function (req, res, next) {
       console.log(err)
       next(err)
     }
-    res.render('message_w_link', {
-      message: 'Registration successful.',
-      href: '/accounts/login',
-      title: 'Registration confirmation',
-      linkName: 'Log In'
-    })
+    passport.authenticate('local', {successRedirect: '/dashboard'})
   })
 })
 
