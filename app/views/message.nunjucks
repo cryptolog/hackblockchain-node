@@ -2,12 +2,21 @@
 
 {% block head %}
   <link href="/css/custom-access.css" rel="stylesheet">
-  <title>HackBlockchain | Forgot Password</title>
+  <title>{{ title }}</title>
 {% endblock %}
 
 {% block body %}
   <body>
     <section class="bg hero is-fullheight">
+      <div class="hero-head">
+        <div class="has-text-centered">
+          <div class="columns is-mobile">
+            <div class="column is-mobile-12" style="margin: auto 20px;">
+              <img src="/img/blockchain_logo.png">
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="hero-body">
         <div class="container pop-up">
           <div class="columns is-multiline has-text-centered">
