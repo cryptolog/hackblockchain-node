@@ -147,7 +147,9 @@ router.post('/signup', function (req, res, next) {
       console.log(err)
       next(err)
     }
-    passport.authenticate('local', {successRedirect: '/dashboard'})
+    passport.authenticate('local')(req, res, function () {
+      res.redirect('/dashboard')
+    })
   })
 })
 
