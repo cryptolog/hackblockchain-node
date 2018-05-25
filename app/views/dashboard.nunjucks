@@ -14,13 +14,11 @@
             <div class="edit-pencil">
               <img src="/img/pencil_white.svg" alt="edit" />
             </div>
-
           </div>
           {% if successful %}
             <article class="message is-success is-12 has-text-left">
               <div class="message-header">
                 <p>Success</p>
-                <button class="delete" aria-label="delete"></button>
               </div>
               <div class="message-body">Your ad has been posted!</div>
             </article>

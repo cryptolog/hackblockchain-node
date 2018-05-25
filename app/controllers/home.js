@@ -14,7 +14,7 @@ router.get('/', async function (req, res, next) {
   } catch (e) {
     throw e
   }
-  res.render('home', {
+  res.render('home/index', {
     ads: latestAds
   })
 })
