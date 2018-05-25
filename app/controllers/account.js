@@ -38,7 +38,7 @@ router.get('/login', async function (req, res, next) {
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/dashboard',
   failureRedirect: '/accounts/login',
-  failureFlash: true
+  failureFlash: 'Invalid username or password.'
 }))
 
 router.get('/forgot', function (req, res, next) {
@@ -146,8 +146,12 @@ router.post('/signup', function (req, res, next) {
   // create account and log in
   Account.register(new Account({email}), password, function (err) {
     if (err) {
-      console.log(err)
-      next(err)
+      if (err.name === 'UserExistsError') {
+        res.render('signup', {message: 'Sorry, the email already exists in our database.'})
+      } else {
+        console.log(err)
+        next(err)
+      }
     }
     passport.authenticate('local')(req, res, function () {
       res.redirect('/dashboard')

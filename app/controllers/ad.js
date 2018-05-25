@@ -26,6 +26,8 @@ router.post('/new', function (req, res, next) {
   // create the add
   // let adObject = req.params
   // let newAd = new Ad(adObject)
+  // successFlash: 'my success flash'
+  // it should have a boolean called successful set to true if ad posting was successful
 
 })
 
