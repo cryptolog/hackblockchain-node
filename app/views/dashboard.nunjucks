@@ -22,7 +22,7 @@
                 <a href="/ad/new" class="button is-info full-search">POST A JOB</a>
               </div>
               <div class="column is-6">
-                <form id="signOut" action="/" method="post">
+                <form id="signOut" action="/accounts/logout" method="post">
                   <input name="user" value="logout" type="hidden" />
                   <input type="submit" class="button button-transparent full-search" value="SIGN OUT" />
                 </form>
