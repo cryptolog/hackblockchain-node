@@ -7,7 +7,7 @@ module.exports = function (app) {
   app.use('/ad', router)
 }
 
-router.get('/ad/new', function (req, res, next) {
+router.get('/new', function (req, res, next) {
   // render create ad form
   // have to check whether the current user's quota allows
   if (req.user.quota > 0) {

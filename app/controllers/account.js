@@ -136,7 +136,7 @@ router.post('/signup', function (req, res, next) {
       message: 'Registration successful.',
       href: '/accounts/login',
       title: 'Registration confirmation',
-      linkName: 'Login'
+      linkName: 'Log In'
     })
   })
 })
