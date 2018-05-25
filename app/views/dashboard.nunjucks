@@ -1,6 +1,102 @@
 {% extends 'layout.nunjucks' %}
 {% block head %}
+  <link href="/css/custom.css" rel="stylesheet">
+  <title>Blockchain | Postings</title>
 {% endblock %}
 
 {% block body %}
+  <section class="bg hero">
+    <div class="hero-head">
+      <div class="container has-text-centered-mobile" style="z-index:1">
+        <div class="columns is-mobile is-multiline hero-nav">
+          <div class="column">
+            <h2 style="display:inline">COINBASE</h2>
+            <div class="edit-pencil">
+              <img src="/img/pencil_white.svg" alt="edit" />
+            </div>
+
+          </div>
+          <div class="column is-4-tablet is-4-desktop is-1-fullscreen">
+            <div class="columns is-mobile">
+              <div class="column is-6">
+                <a href="/ad/new" class="button is-info full-search">POST A JOB</a>
+              </div>
+              <div class="column is-6">
+                <form id="signOut" action="/" method="post">
+                  <input name="user" value="logout" type="hidden" />
+                  <input type="submit" class="button button-transparent full-search" value="SIGN OUT" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container has-text-centered posting-label">
+    <h2>ACTIVE POSTINGS</h2>
+  </div>
+  <div class="container post-container section-full-height-b transition-fade">
+
+    <!-- UNIQUE LOOP THIS SECTION TO DISPLAY JOBS -->
+    <div class="columns post-b is-centered">
+      <div class="column is-11-tablet is-10-widescreen posting-section">
+        <div class="columns">
+          <div class="column is-3-tablet is-4-desktop is-vertical-centered has-text-left-tablet has-text-centered posting-padding-left">
+            <h1>Senior Etherium Developer</h1>
+          </div>
+          <div class="column is-4-tablet is-4-desktop is-vertical-centered">
+            <div class="columns is-variable is-1 post-icons is-mobile is-multiline">
+              <div class="column is-6-tablet is-12-mobile is-6-fullhd">
+                <div class="icon-set">
+                  <div class="icon-left icon-clock"></div>
+                  <div class="data-right">12 hours ago</div>
+                </div>
+              </div>
+              <div class="column is-6-tablet is-12-mobile is-6-full-hd">
+                <div class="icon-set">
+                  <div class="icon-left icon-hourglass"></div>
+                  <div class="data-right">Expiring in 8 days</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-5-tablet is-4-desktop is-vertical-centered mobile-job-title active-posting-title">
+            <div class="columns has-text-centered is-mobile">
+
+              <div class="column">
+                <form id="goToJobForm" action="/ad/job_description.html" method="get">
+                  <input name="job" value="999-999" type="hidden" />
+                  <input type="submit" class="button is-info full-search" value="VIEW" />
+                </form>
+
+              </div>
+              <div class="column">
+                <form id="goToEditForm" action="/user/edit.html" method="get">
+                  <input name="job" value="999-999" type="hidden" />
+                  <input type="submit" class="button is-info full-search" value="EDIT" />
+                </form>
+              </div>
+              <div class="column">
+                <form id="deleteJobForm" action="/user/" method="post">
+                  <input name="delete_job" value="999-999" type="hidden" />
+                  <input type="submit" class="button is-outlined is-flat is-danger full-search" value="DELETE" />
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END LOOP HERE -->
+  </div>
+  <section class="bg footer-b">
+    <div class="hero-head">
+      <div class="container has-text-centered ">
+        <img src="/img/blockchain_logo.png ">
+      </div>
+    </div>
+  </section>
 {% endblock %}
