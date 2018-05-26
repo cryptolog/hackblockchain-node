@@ -36,3 +36,7 @@ router.patch('/:id', function (req, res, next) {
   // do something here
   console.log(adId)
 })
+
+router.get('/:id/edit', function (req, res, next) {
+  res.send('hello world')
+})

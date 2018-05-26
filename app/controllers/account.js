@@ -31,7 +31,7 @@ router.get('/login', async function (req, res, next) {
       })
     }
   } else {
-    res.render('login')
+    res.render('account/login')
   }
 })
 
@@ -60,7 +60,7 @@ router.post('/forgot', async function (req, res, next) {
   if (account) {
     mailOptions.to = emailId
     let pwHash = account.get('hash')
-    let userId = account._id
+    let userId = account._id.toString()
     let payload = {
       userId,
       emailId
@@ -128,7 +128,7 @@ router.post('/reset', async function (req, res) {
   const message = 'Your password has been successfully reset, you can now log in'
   res.render('message_w_link', {
     message,
-    href: '/',
+    href: '/accounts/login',
     title: 'Hackblockchain | Reset Password',
     linkName: 'Login'
   })
@@ -159,7 +159,7 @@ router.post('/signup', function (req, res, next) {
   })
 })
 
-router.post('/logout', function (req, res, next) {
+router.get('/logout', function (req, res, next) {
   req.logout()
   res.redirect('/')
 })
